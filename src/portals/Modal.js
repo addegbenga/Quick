@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 
@@ -9,10 +8,12 @@ const Modal = ({ children, isOpen }) => {
   useEffect(() => {
     if (isOpen) {
       document.querySelector("body").style.overflow = "hidden";
+      document.querySelector("body").classList.add("overlay");
     } else {
-      document.querySelector("body").style.overflow = "";
+      document.querySelector("body").style.overflow = "scroll";
+      document.querySelector("body").classList.remove("overlay");
     }
-  },[isOpen]);
+  });
 
   useEffect(() => {
     mount.appendChild(el);
