@@ -42,34 +42,19 @@ export default function AvatarModal({ isOpen, closeModal }) {
             leaveTo="opacity-0 scale-95"
           >
             <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-lg">
-              <Dialog.Title
-                as="h3"
-                className="text-lg font-medium leading-6 pb-4 text-gray-900"
-              >
-                Edit your Profile
-              </Dialog.Title>
-
-              <div className="grid mb-4">
-                <label className="text-sm text-left text-semibold">
-                  Full name
-                </label>
-                <input
-                  placeholder="John doe"
-                  className="border-0 bg-gray-100 text-sm p-4   focus:ring-4 rounded mt-2"
-                  type="text"
-                />
+              <div className="flex pb-4 justify-between items-center">
+                <Dialog.Title
+                  as="h3"
+                  className="text-lg font-medium leading-6  text-gray-900"
+                >
+                  Upload
+                </Dialog.Title>
+                <button onClick={closeModal}>
+                  {" "}
+                  <i className="fa fa-times" />
+                </button>
               </div>
-              <div className="grid mb-4">
-                <label className="text-sm text-left text-semibold">
-                  Enter bio
-                </label>
-                <textarea
-                  rows="8"
-                  placeholder="Enter your bio"
-                  className="border-0 bg-gray-100 text-sm p-4  focus:ring-4 rounded mt-2"
-                  type="text"
-                />
-              </div>
+              <button className="bg-gray-100 p-4">Upload from disk</button>
 
               <div className="mt-4 flex justify-end">
                 <button

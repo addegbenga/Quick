@@ -1,8 +1,6 @@
 import React, { Fragment, useState, useRef, useEffect } from "react";
 import avatar from "../assets/avatar.svg";
 import Navbar from "./adminNav";
-import { Transition } from "@headlessui/react";
-import { Dialog } from "@headlessui/react";
 import SocialModal from "../modals/SocialModal";
 import OtherLinkModal from "../modals/OtherLinkModal";
 import AvatarModal from "../modals/AvatarModal";
