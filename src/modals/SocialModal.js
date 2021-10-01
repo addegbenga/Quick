@@ -135,7 +135,7 @@ export default function SocialModal({ isOpen, closeModal }) {
             leaveTo="opacity-0 scale-95"
           >
             <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-lg">
-              <div className="flex justify-between pt-2 pb-4 mb-7 border-b items-center">
+              <div className="flex justify-between mr-3 pt-2 pb-4 mb-7 border-b items-center">
                 <Dialog.Title
                   as="h3"
                   className="text-lg font-medium leading-6  text-gray-900"

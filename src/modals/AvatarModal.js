@@ -4,6 +4,18 @@ import { Transition } from "@headlessui/react";
 import { Dialog } from "@headlessui/react";
 
 export default function AvatarModal({ isOpen, closeModal }) {
+  // const [form, setFormdata] = useState({
+  //   avatar: "",
+  // });
+
+  // const handleFormdata = (e) => {
+  //   setFormdata({ ...form, [e.target.name]: e.target.value });
+  // };
+
+  const handleFormSubmit = () => {
+    // console.log(form.avatar);
+    closeModal();
+  };
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
@@ -47,20 +59,27 @@ export default function AvatarModal({ isOpen, closeModal }) {
                   as="h3"
                   className="text-lg font-medium leading-6  text-gray-900"
                 >
-                  Upload
+                  Upload Picture
                 </Dialog.Title>
                 <button onClick={closeModal}>
                   {" "}
                   <i className="fa fa-times" />
                 </button>
               </div>
-              <button className="bg-gray-100 p-4">Upload from disk</button>
+              <div className="grid place-items-center mb-4 bg-white border text-gray-700 rounded p-7">
+                <p className="mb-3 text-center text-lg ">Add a thumbnail</p>
+                <label className="w-64 flex flex-col items-center px-4 py-6  rounded-md tracking-wide uppercase border border-blue cursor-pointer hover:bg-neutral-secondary hover:text-white text-gray-600 ease-linear transition-all duration-150">
+                  <i className="fas fa-cloud-upload-alt fa-2x"></i>
+                  <span className="mt-2 text-sm">Select a file</span>
+                  <input type="file" className="hidden" />
+                </label>
+              </div>
 
               <div className="mt-4 flex justify-end">
                 <button
                   type="button"
                   className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-neutral-normal border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                  onClick={closeModal}
+                  onClick={handleFormSubmit}
                 >
                   Save
                 </button>

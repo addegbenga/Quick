@@ -1,9 +1,21 @@
-import React, { Fragment } from "react";
-
+import React, { Fragment, useState } from "react";
 import { Transition } from "@headlessui/react";
 import { Dialog } from "@headlessui/react";
 
 export default function AboutModal({ isOpen, closeModal }) {
+  const [form, setFormdata] = useState({
+    fullname: "",
+    about: "",
+  });
+
+  const handleFormdata = (e) => {
+    setFormdata({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleFormSubmit = () => {
+    console.log(form.fullname);
+    closeModal();
+  };
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
@@ -60,6 +72,9 @@ export default function AboutModal({ isOpen, closeModal }) {
                   Full name
                 </label>
                 <input
+                  name="fullname"
+                  onChange={(e) => handleFormdata(e)}
+                  value={form.fullname}
                   placeholder="John doe"
                   className="border-0 bg-gray-100 text-sm p-4   focus:ring-4 rounded mt-2"
                   type="text"
@@ -71,6 +86,9 @@ export default function AboutModal({ isOpen, closeModal }) {
                 </label>
                 <textarea
                   rows="8"
+                  name="about"
+                  value={form.about}
+                  onChange={(e) => handleFormdata(e)}
                   placeholder="Enter your bio"
                   className="border-0 bg-gray-100 text-sm p-4  focus:ring-4 rounded mt-2"
                   type="text"
@@ -81,7 +99,8 @@ export default function AboutModal({ isOpen, closeModal }) {
                 <button
                   type="button"
                   className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-neutral-normal border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                  onClick={closeModal}
+                  //   onClick={closeModal}
+                  onClick={handleFormSubmit}
                 >
                   Save
                 </button>

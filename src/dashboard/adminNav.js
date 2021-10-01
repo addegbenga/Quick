@@ -6,7 +6,8 @@ import card from "../assets/logoicon.svg";
 export default function adminNav() {
   return (
     <div className="relative">
-      <div className="flex  items-center justify-between shadow-lg border-b-2 bg-white p-6">
+      <div className="flex  items-center justify-between  border-b
+       bg-white p-6">
         <div className="flex text-sm items-center">
           <i class="fas fa-link text-semibold  mr-2"></i>
           <a href="div">www.qwikker.com/akinkumi</a>

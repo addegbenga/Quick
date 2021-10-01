@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useRef, useEffect } from "react";
+import React, { Fragment, useState} from "react";
 import avatar from "../assets/avatar.svg";
 import Navbar from "./adminNav";
 import SocialModal from "../modals/SocialModal";
