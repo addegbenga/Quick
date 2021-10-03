@@ -40,9 +40,9 @@
 .testimonial::before {
   position: absolute;
   content: "";
-  left: 10rem;
+  left: 11rem;
   top: 60%;
   width: 200px;
-  height: 0.5px;
-  background-color: black;
+  height: 1px;
+  background-color: rgb(13, 13, 59)
 }

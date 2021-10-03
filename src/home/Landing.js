@@ -14,16 +14,16 @@ export default function Landing() {
   return (
     <>
       <Navbar />
-      <div className="mt-36 mb-6 px-6 md:relative md:flex ">
-        <div className="text-center md:text-left md:mt-20 ">
+      <div className="mt-36 mb-6 px-6 md:relative md:flex lg:w-11/12 lg:m-auto lg:mt-36 xl:w-10/12 xl:m-auto  xl:mt-36">
+        <div className="text-center flex flex-col justify-center items-center md:block md:text-left md:mt-20 ">
           <div className="text-3xl md:text-4xl font-bold ">
             <h1> Sharing your profile </h1>
             <h1> is now easier than ever.</h1>
           </div>
           <div className="mt-7">
-            <p>
-              Qwikker lets creatives share their social links easily we also provide
-              you with a digital card that is customizable.
+            <p className="md:w-1/2">
+              Qwikker lets creatives share their social links easily we also
+              provide you with a digital card that is customizable.
             </p>
           </div>
           <button className="bg-neutral-normal mt-7 font-semibold text-white px-8 py-3 rounded">
@@ -31,22 +31,22 @@ export default function Landing() {
           </button>
         </div>
         <img
-          className="md:absolute mt-4 pr-5 md:w-1/2 md:right-0"
+          className="md:absolute mt-4 md:mt-0 pr-5 md:w-1/2 md:right-0"
           src={heroimage}
           alt="hero"
         />
       </div>
       {/* about section */}
-      <div className="px-10 md:mt-28">
+      <div className="px-7 md:mt-28 text-center">
         <div className="flex flex-col md:flex-row-reverse items-center rounded mb-24">
-          <div className="md:flex md:flex-col items-center  md:pl-8">
+          <div className="md:flex md:flex-col items-center text-center  md:pl-8">
             <h1 className="text-2xl font-semibold">Connect with Clients</h1>
             <p className="md:w-2/3 text-sm mt-2">
               With Qwikker card you can share your profile with clients reach
               your target audience and close more deals anywhere anytime.
             </p>
           </div>
-          <div className="mt-6 bg-white shadow-xl border border-gray-50 p-8">
+          <div className="mt-6 bg-white  border rounded shadow-lg  p-8">
             <img className="w-72" src={about1} alt="about" />
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function Landing() {
               content in seconds. No hosting, domain or coding required.
             </p>
           </div>
-          <div className="mt-6 bg-white shadow-xl border border-gray-50 p-8">
+          <div className="mt-6 bg-white shadow-xl border shadow-lg rounded p-8">
             <img className="w-72" src={about2} alt="about" />
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function Landing() {
               possible.
             </p>
           </div>
-          <div className="mt-6 bg-white shadow-xl border border-gray-50 p-8">
+          <div className="mt-6 bg-white shadow-lg border rounded p-8">
             <img className="w-72" src={about3} alt="about" />
           </div>
         </div>
@@ -98,8 +98,10 @@ export default function Landing() {
       {/* 
       testmonials section */}
 
-      <div className="p-4 mt-10">
-        <h1 className="mb-8 font-semibold text-2xl testimonial">Testimonials</h1>
+      <div className="p-4 mt-10 ">
+        <h1 className="mb-8 font-semibold text-2xl testimonial">
+          Testimonials
+        </h1>
         <div>
           <div className="shadow-xl">
             <img
