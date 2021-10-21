@@ -17,7 +17,10 @@ export default function Signup() {
       className="bg-red-300 "
     >
       <header className="bg-white shadow-lg border-b p-5 items-center flex justify-between fixed w-full z-10 ">
-        <img src={logo} className="w-5 md:hidden ml-3" alt="logo" />
+        <Link to="/">
+          {" "}
+          <img src={logo} className="w-5 md:hidden ml-3" alt="logo" />
+        </Link>
         <ul className="md:flex justify-evenly hidden  md:w-2/4 md:m-auto text-sm">
           <li className="mr-2">Home</li>
           <li className="mr-2">Faq</li>
@@ -33,12 +36,13 @@ export default function Signup() {
         <div className="flex w-2/4 justify-between mb-10 m-auto">
           <button
             className={`${
-              match.isExact && " border-b-2 border-neutral-secondary p-1"
-            }`}
+              match.isExact &&
+              " border-b-2 border-neutral-secondary p-1 font-semibold"
+            } font-semibold`}
           >
             <Link to="/register"> Register</Link>
           </button>
-          <button className="p-1">
+          <button className="p-1 font-semibold">
             <Link to="/login">Login</Link>
           </button>
         </div>
@@ -85,7 +89,7 @@ export default function Signup() {
                   type="text"
                   autoComplete="true"
                   name="name"
-                  className="border w-full md:p-2  border-indigo-100   focus:border-indigo-300  focus:text-gray-600 focus:outline-none  p-3 pl-7  md:pl-8 rounded "
+                  className="border w-full md:p-2 placeholder-gray-300  border-indigo-100   focus:border-indigo-300  focus:text-gray-600 focus:outline-none  p-3 pl-7  md:pl-8 rounded "
                 />
                 <span className="absolute left-2 top-3 md:top-2">
                   {" "}
@@ -98,11 +102,11 @@ export default function Signup() {
                   type="email"
                   name="email"
                   autoComplete="true"
-                  className="border w-full  border-indigo-100  focus:border-indigo-300  focus:text-gray-600 focus:outline-none p-3 md:p-2 pl-7  md:pl-8 rounded "
+                  className="border w-full placeholder-gray-300   border-indigo-100  focus:border-indigo-300  focus:text-gray-600 focus:outline-none p-3 md:p-2 pl-7  md:pl-8 rounded "
                 />
                 <span className="absolute left-2 top-3 md:top-2">
                   {" "}
-                  <i className="fas fa-at text-gray-400"></i>
+                  <i className="fas fa-envelope text-gray-400"></i>
                 </span>
               </div>
               <div className="relative grid mt-3">
@@ -111,7 +115,7 @@ export default function Signup() {
                   type="password"
                   autoComplete="true"
                   name="password"
-                  className="border w-full md:p-2  border-indigo-100 focus:border-indigo-300  focus:text-gray-600 focus:outline-none  p-3 pl-7 md:pl-8 rounded "
+                  className="border w-full md:p-2 placeholder-gray-300   border-indigo-100 focus:border-indigo-300  focus:text-gray-600 focus:outline-none  p-3 pl-7 md:pl-8 rounded "
                 />
                 <span className="absolute left-2 top-3 md:top-2">
                   {" "}
@@ -124,11 +128,11 @@ export default function Signup() {
                   autoComplete="true"
                   type="password"
                   name="confirmPassword"
-                  className="border w-full md:p-2 border-indigo-100 focus:border-indigo-300  focus:text-gray-600 focus:outline-none p-3 pl-7  md:pl-8 rounded "
+                  className="border w-full placeholder-gray-300  md:p-2 border-indigo-100 focus:border-indigo-300  focus:text-gray-600 focus:outline-none p-3 pl-7  md:pl-8 rounded "
                 />
                 <span className="absolute left-2 top-3 md:top-2">
                   {" "}
-                  <i className="fas fa-check text-gray-400 "></i>
+                  <i className="fas fa-paper-plane text-gray-400 "></i>
                 </span>
                 <p className="text-right mt-1 text-sm text-gray-500 hover:text-blue-500 cursor">
                   Forgot password?

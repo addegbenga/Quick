@@ -7,6 +7,7 @@ import {
 } from "../actions/types";
 
 const initialState = {
+  token: localStorage.getItem("token"),
   isAuthenticated: false,
   user: null,
   loading: true,
@@ -17,6 +18,13 @@ export const authReducer = (state = initialState, action) => {
     case REGISTER_USER:
       return {
         ...state,
+        user: action.payload,
+        loading: false,
+      };
+    case LOGIN_USER:
+      return {
+        ...state,
+        isAuthenticated: true,
         user: action.payload,
         loading: false,
       };

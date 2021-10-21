@@ -1,10 +1,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import ForgotPassword from "./auth/ForgotPassword";
-import Signin from "./auth/Signin";
-import Signup from "./auth/Signup";
-import AdminDashboard from "./dashboard/admin";
-import Landing from "./home/Landing";
+import ForgotPassword from "../auth/ForgotPassword";
+import Signin from "../auth/Signin";
+import Signup from "../auth/Signup";
+import AdminDashboard from "../dashboard/admin";
+import Landing from "../home/Landing";
+import { ProtectedRoute } from "./ProtectedRoute";
 
 export default function Routes() {
   return (
@@ -18,7 +19,8 @@ export default function Routes() {
           exact={true}
           path="/forgot-password"
         />
-        <Route path="/name" exact={true} component={AdminDashboard} />
+        <Route path="/name" exact={true} component={AdminDashboard}/>
+        {/* <ProtectedRoute path="/name" exact={true} component={AdminDashboard} /> */}
       </Switch>
     </div>
   );
