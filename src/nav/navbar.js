@@ -8,7 +8,7 @@ export default function navbar() {
       <div className=" lg:w-5/6 md:w-5/6 md:m-auto flex lg:m-auto xl:w-5/6 xl:m-auto justify-between items-center p-4 md:p-6 lg:p-6 xl:p-6 ">
         <img className="w-20 lg:w-24 xl:w-28 " src={logo} alt="logo" />
         <div className="flex items-center ">
-          <ul className="hidden md:block mr-10  text-sm">
+          <ul className="hidden md:block mr-10 font-medium  text-sm">
             <a href="#e">Home</a>
             <a className="mx-7"  href="#e">About</a>
             <a href="#e">Faqs</a>
