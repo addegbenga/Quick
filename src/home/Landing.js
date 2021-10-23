@@ -44,7 +44,7 @@ export default function Landing() {
               >
                 Keep your links organized{" "}
               </h1>
-              <p className="p-4  md:p-0 text-md mb-4 lg:my-7 xl:my-8 font-medium  text-gray-700">
+              <p className="p-4  md:p-0 text-md mb-4 lg:my-7 xl:my-8 font-medium lg:text-lg xl:text-lg  text-gray-700">
                 Qwikker lets you have your social links all in one place for
                 easy access and let's you reach more audience easily.
               </p>
