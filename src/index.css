@@ -27,6 +27,32 @@ html {
 /* .desktop{
   display: none;
 } */
+.landing-header{
+  font-size: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .landing-header{
+font-size: 40px;
+  }
+  
+}
+
+@media screen and (min-width: 1024px) {
+  .landing-header{
+font-size: 60px;
+line-height: 3.5rem;
+  }
+  
+}
+
+@media screen  and (min-width:1280){
+  .landing-header{
+    font-size: 65px;
+    line-height: 3.5rem;
+      }
+  
+}
 @media screen and (min-width: 768px) {
  .mobile{
    display: none;

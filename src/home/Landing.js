@@ -38,9 +38,9 @@ export default function Landing() {
           <div className="flex flex-col items-center md:justify-between md:items-start md:w-4/5 md:flex-row">
             <div className="md:w-6/12 lg:w-6/12 xl:w-6/12">
               <h1
-              style={{fontSize:"40px"}}
+             
             
-                className="font-bold px-8 md:px-0 md:mb-5 leading-10 mb-2 opacity-90"
+                className="font-bold landing-header px-8 md:px-0 md:mb-5 leading-10 mb-2 opacity-90"
               >
                 Keep your links organized{" "}
               </h1>
@@ -48,7 +48,7 @@ export default function Landing() {
                 Qwikker lets you have your social links all in one place for
                 easy access and let's you reach more audience easily.
               </p>
-              <button className="px-5 mb-4 rounded py-3 text-sm bg-blue-800 text-white">
+              <button className="px-5 mb-4 lg:py-5 xl:py-5 xl:px-6 lg:px-6 rounded py-3 text-sm bg-blue-800 text-white">
                 Get started ⚡️
               </button>
             </div>
@@ -63,7 +63,7 @@ export default function Landing() {
           </div>
 
           {/* how it works section */}
-          <div className="mt-20 md:mb-22 bg-white w-full md:-mt-48 lg:-mt-80 xl:-mt-80 lg:pt-20 xl:pt-20 md:pt-20">
+          <div className="mt-20 md:mb-22 bg-white w-full md:-mt-48 lg:-mt-72 xl:-mt-72 lg:pt-20 xl:pt-20 md:pt-20">
             <div className="mb-16 md:mb-4 md:flex md:flex-col md:items-center">
               <h1
                 style={{ fontSize: "23px" }}
