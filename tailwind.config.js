@@ -4,8 +4,9 @@ module.exports = {
   theme: {
     extend: {
       width: {
-        '1/7': '600px',
-        '2/7': '28.5714286%',
+        '1/7': '20rem',
+        '1/14': '25rem',
+        '1/28':'30rem'
       },
       colors: {
         transparent: "transparent",

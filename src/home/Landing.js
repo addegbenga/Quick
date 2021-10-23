@@ -34,9 +34,9 @@ export default function Landing() {
     <>
       <Navbar />
       <div className="">
-        <div className="mt-44 flex items-center flex-col text-center md:text-left">
+        <div className="mt-44 lg:mt-60 xl:mt-60  flex items-center flex-col text-center md:text-left">
           <div className="flex flex-col items-center md:justify-between md:items-start md:w-4/5 md:flex-row">
-            <div className="md:w-6/12 ">
+            <div className="md:w-6/12 lg:w-6/12 xl:w-6/12">
               <h1
                 style={{ fontSize: "40px" }}
                 className="font-bold px-8 md:px-0 md:mb-5 leading-10 mb-2 opacity-90"
@@ -52,9 +52,9 @@ export default function Landing() {
               </button>
             </div>
 
-            <div className="mt-4 md:-mt-14">
+            <div className="mt-4 md:-mt-14 lg:-mt-24">
               <img
-              className=" md:w-1/7"
+              className=" md:w-1/7 lg:w-1/14 xl:w-1/28"
                 src="/homemockup.svg"
                 alt="hero"
               />
@@ -62,7 +62,7 @@ export default function Landing() {
           </div>
 
           {/* how it works section */}
-          <div className="mt-20 md:mb-22 bg-white w-full md:-mt-48 md:pt-20">
+          <div className="mt-20 md:mb-22 bg-white w-full md:-mt-48 lg:-mt-64 xl:-mt-64 lg:pt-20 xl:pt-20 md:pt-20">
             <div className="mb-16 md:mb-4 md:flex md:flex-col md:items-center">
               <h1
                 style={{ fontSize: "23px" }}
@@ -170,10 +170,10 @@ export default function Landing() {
           {/* footer section */}
           <div className="bg-blue-900 w-full ">
             <div className="flex flex-col items-center p-10 py-12 mb-12 ">
-              <h1 className="text-white md:text-center text-xl font-bold px-6 mb-6 ">
+              <h1 className="text-white md:text-center text-xl lg:w-2/5 xl:w-2/5 font-bold px-6 mb-6 ">
                 LETS BOOST YOUR PRODUCTIVITY TOGETHER
               </h1>
-              <p className="text-gray-200 md:text-center md:w-3/4 ">
+              <p className="text-gray-200 md:text-center md:w-3/4 lg:w-3/5 ">
                 Sign up for our newsletter to stay informed as we add more
                 feature information is power
               </p>
@@ -182,7 +182,7 @@ export default function Landing() {
               </button>
             </div>
             <div className="flex justify-between item-center border-t border-gray-150 border-opacity-20 p-4 text-gray-100">
-              <span className="text-xs">&copy; Qwikker 2021</span>
+              <span className="text-xs font-bold">&copy; Qwikker 2021</span>
               <a href="https://www.codewars.com/users/addegbenga"> ✨️✨️ </a>
             </div>
           </div>
