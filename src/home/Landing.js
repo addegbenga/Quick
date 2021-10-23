@@ -36,7 +36,7 @@ export default function Landing() {
       <div className="">
         <div className="mt-44 lg:mt-60 xl:mt-60  flex items-center flex-col text-center md:text-left">
           <div className="flex flex-col items-center md:justify-between md:items-start md:w-4/5 md:flex-row">
-            <div className="md:w-6/12 lg:mt-32 xl:mt-32 lg:w-6/12 xl:w-6/12">
+            <div className="md:w-6/12 lg:mt-24 xl:mt-24 lg:w-6/12 xl:w-6/12">
               <h1
              
             
