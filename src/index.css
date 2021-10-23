@@ -40,7 +40,7 @@ font-size: 40px;
 
 @media screen and (min-width: 1024px) {
   .landing-header{
-font-size: 60px;
+font-size: 74px;
 line-height: 4rem;
   }
   
@@ -48,7 +48,7 @@ line-height: 4rem;
 
 @media screen  and (min-width:1280){
   .landing-header{
-    font-size: 65px;
+    font-size: 80px;
     line-height: 4rem;
       }
   

@@ -34,9 +34,9 @@ export default function Landing() {
     <>
       <Navbar />
       <div className="">
-        <div className="mt-44 lg:mt-60 xl:mt-60  flex items-center flex-col text-center md:text-left">
+        <div className="mt-44 lg:mt-64 xl:mt-64  flex items-center flex-col text-center md:text-left">
           <div className="flex flex-col items-center md:justify-between md:items-start md:w-4/5 md:flex-row">
-            <div className="md:w-6/12 lg:mt-12 xl:mt-12 lg:w-6/12 xl:w-6/12">
+            <div className="md:w-6/12 lg:mt-6 xl:mt-6 lg:w-6/12 xl:w-6/12">
               <h1
              
             
@@ -116,7 +116,7 @@ export default function Landing() {
                 The super app that makes your life Easier⚡️
               </h1>
               <p className="md:text-center text-gray-700 font-medium px-4 md:w-2/5 text-sm md:m-auto">
-                Get your brand well organized and more productive with our
+                Get your brand well organized and more creative with our
                 simple service
               </p>
             </div>
