@@ -70,7 +70,7 @@ export default function Landing() {
               >
                 How it works
               </h1>
-              <p className="font-medium md:w-3/5 md:text-center text-md px-5 md:px-0 text-gray-700">
+              <p className="font-medium md:w-3/5 lg:w-2/4 xl:w-2/4 lg:text-lg xl:text-lg md:text-center text-md px-5 md:px-0 text-gray-700">
                 Get your account up and running following this simple step no
                 long registration process you should be set in minutes.
               </p>

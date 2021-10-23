@@ -49,10 +49,10 @@ html {
 
   }
   .how-it-works-heading {
-    font-size: 28px;
+    font-size: 30px;
   }
   .super-app-heading {
-    font-size: 29px;
+    font-size: 31px;
   }
 }
 
@@ -62,10 +62,10 @@ html {
     line-height: 4rem;
   }
   .how-it-works-heading {
-    font-size: 28px;
+    font-size: 30px;
   }
   .super-app-heading {
-    font-size: 29px;
+    font-size: 31px;
   }
 }
 @media screen and (min-width: 768px) {
