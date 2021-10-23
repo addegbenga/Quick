@@ -37,11 +37,7 @@ export default function Landing() {
         <div className="mt-44 lg:mt-72 xl:mt-72  flex items-center flex-col text-center md:text-left">
           <div className="flex flex-col items-center md:justify-between md:items-start md:w-4/5 md:flex-row">
             <div className="md:w-6/12 lg:mt-4 xl:mt-4 lg:w-6/12 xl:w-6/12">
-              <h1
-             
-            
-                className="font-bold landing-header px-8 md:px-0 md:mb-5 leading-10 mb-2 opacity-90"
-              >
+              <h1 className="font-bold landing-header px-8 md:px-0 md:mb-5 leading-10 mb-2 opacity-90">
                 Keep your links organized{" "}
               </h1>
               <p className="p-4  md:p-0 text-md mb-4 lg:my-7 xl:my-8 font-medium lg:text-lg xl:text-lg  text-gray-700">
@@ -55,7 +51,7 @@ export default function Landing() {
 
             <div className="mt-4 md:-mt-14 lg:-mt-24">
               <img
-              className="w-1/7 md:w-1/7 lg:w-1/14 xl:w-1/28"
+                className="w-1/7 md:w-1/7 lg:w-1/14 xl:w-1/28"
                 src="/homemockup.svg"
                 alt="hero"
               />
@@ -65,7 +61,8 @@ export default function Landing() {
           {/* how it works section */}
           <div className="mt-20 md:mb-22 bg-white w-full md:-mt-48 lg:-mt-72 xl:-mt-72 lg:pt-20 xl:pt-20 md:pt-20">
             <div className="mb-16 md:mb-4 md:flex md:flex-col md:items-center">
-              <h1   style={{ fontSize: "23px" }}
+              <h1
+                style={{ fontSize: "23px" }}
                 className="how-it-works-heading font-bold mb-3 opacity-75"
               >
                 How it works
@@ -108,20 +105,17 @@ export default function Landing() {
           {/* super app section */}
           <div className=" md:bg-white py-14 w-full">
             <div>
-              <h1
-              
-                className="super-app-heading font-bold px-6 md:px-0 pb-2 md:text-center md:w-2/3 md:m-auto opacity-70"
-              >
+              <h1 className="super-app-heading font-bold px-6 md:px-0 pb-2 md:text-center md:w-2/3 md:m-auto opacity-70">
                 The super app that makes your life Easier⚡️
               </h1>
-              <p className="md:text-center text-gray-700 font-medium px-4 md:w-2/5 text-sm md:m-auto">
-                Get your brand well organized and more creative with our
-                simple service
+              <p className="md:text-center lg:w-2/4 xl:w-2/4 lg:text-lg xl:text-lg text-gray-700 font-medium px-4 md:w-2/5 text-sm md:m-auto">
+                Get your brand well organized and more creative with our simple
+                service
               </p>
             </div>
             <div className="md:flex md:flex-col lg:w-5/6 xl:w-5/6 lg:m-auto xl:m-auto md:w-11/12 md:m-auto ">
               <div className="mt-32 md:mt-10  flex flex-col md:flex-row p-6 rounded-lg ">
-                <div className="md:mt-16">
+                <div className="md:mt-16 lg:mt-20 xl:mt-20">
                   {" "}
                   <h1 className="text-xl text-left font-bold opacity-80">
                     Add your Links 🖇️ -
@@ -143,7 +137,7 @@ export default function Landing() {
                 />
               </div>
               <div className="mt-4 flex flex-col md:flex-row p-6 rounded-lg ">
-                <div className="md:mt-16">
+                <div className="md:mt-16 lg:mt-12 xl:mt-12 ">
                   {" "}
                   <h1 className="text-xl text-left font-bold opacity-80">
                     Custom Profile 🤳️ -
