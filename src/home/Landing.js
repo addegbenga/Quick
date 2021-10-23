@@ -119,7 +119,7 @@ export default function Landing() {
                 simple service
               </p>
             </div>
-            <div className="md:flex md:flex-col md:w-11/12 md:m-auto ">
+            <div className="md:flex md:flex-col lg:w-5/6 xl:w-5/6 lg:m-auto xl:m-auto md:w-11/12 md:m-auto ">
               <div className="mt-32 md:mt-10  flex flex-col md:flex-row p-6 rounded-lg ">
                 <div className="md:mt-16">
                   {" "}
