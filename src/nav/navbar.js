@@ -5,7 +5,7 @@ import logo from "../assets/logo.svg";
 export default function navbar() {
   return (
     <div className="bg-white shadow-lg md:shadow-none border w-full z-10 fixed w-full top-0">
-      <div className=" lg:w-11/12 md:w-5/6 md:m-auto flex lg:m-auto justify-between items-center p-4 md:p-2 ">
+      <div className=" lg:w-11/12 md:w-5/6 md:m-auto flex lg:m-auto justify-between items-center p-8 md:p-4 ">
         <img className="w-20 " src={logo} alt="logo" />
         <div className="flex items-center ">
           <ul className="hidden md:block md:mr-10 text-sm">

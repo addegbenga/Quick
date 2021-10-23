@@ -20,6 +20,12 @@ body{
   min-height: 100vh;
 }
 
+.hero-image{
+  /* style={{ width: "20rem", height: "550px", objectFit: "cover" }} */
+  width: 20rem;
+  height: 550px;
+  object-fit: cover;
+}
 
 html {
   scroll-behavior: smooth;

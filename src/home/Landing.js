@@ -54,7 +54,8 @@ export default function Landing() {
 
             <div className="mt-4 md:-mt-14">
               <img
-                style={{ width: "20rem", height: "550px", objectFit: "cover" }}
+              className="hero-image"
+              
                 src="/homemockup.svg"
                 alt="hero"
               />
@@ -79,7 +80,7 @@ export default function Landing() {
               {data.map((item, index) => (
                 <div
                   key={index}
-                  className="flex md:m-2 md:rounded-lg md:bg-white md:border md:text-center bg-white  border-t border-gray-100 p-10  md:p-7 flex-col items-center "
+                  className="flex md:m-2 md:rounded-lg md:bg-white md:border md:text-center bg-white  border-t border-gray-100 p-10 flex-col items-center "
                 >
                   <div
                     style={{
@@ -98,7 +99,7 @@ export default function Landing() {
                   <h1 className="text-lg md:text-sm  opacity-75 font-semibold mb-2">
                     {item.title}
                   </h1>
-                  <p className="text-sm px-2 md:px-0 md:font-normal md:text-xs font-medium text-gray-700">
+                  <p className="text-sm px-2 md:px-0 md:font-medium md:text-sm font-medium text-gray-700">
                     {item.details}
                   </p>
                 </div>
