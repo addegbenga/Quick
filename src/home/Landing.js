@@ -65,9 +65,8 @@ export default function Landing() {
           {/* how it works section */}
           <div className="mt-20 md:mb-22 bg-white w-full md:-mt-48 lg:-mt-72 xl:-mt-72 lg:pt-20 xl:pt-20 md:pt-20">
             <div className="mb-16 md:mb-4 md:flex md:flex-col md:items-center">
-              <h1
-                style={{ fontSize: "23px" }}
-                className=" font-bold mb-3 opacity-75"
+              <h1   style={{ fontSize: "23px" }}
+                className="how-it-works-heading font-bold mb-3 opacity-75"
               >
                 How it works
               </h1>
@@ -110,8 +109,8 @@ export default function Landing() {
           <div className=" md:bg-white py-14 w-full">
             <div>
               <h1
-                style={{ fontSize: "24px" }}
-                className="font-bold px-6 md:px-0 pb-2 md:text-center md:w-2/3 md:m-auto opacity-70"
+              
+                className="super-app-heading font-bold px-6 md:px-0 pb-2 md:text-center md:w-2/3 md:m-auto opacity-70"
               >
                 The super app that makes your life Easier⚡️
               </h1>
