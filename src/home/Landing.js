@@ -108,7 +108,7 @@ export default function Landing() {
               <h1 className="super-app-heading font-bold px-6 md:px-0 pb-2 md:text-center md:w-2/3 md:m-auto opacity-70">
                 The super app that makes your life Easier⚡️
               </h1>
-              <p className="md:text-center lg:w-2/4 xl:w-2/4 lg:text-lg xl:text-lg text-gray-700 font-medium px-4 md:w-2/5 text-sm md:m-auto">
+              <p className="md:text-center lg:w-2/4 xl:w-2/4 lg:text-lg xl:text-lg lg:px-8 xl:px-8 text-gray-700 font-medium px-4 md:w-2/5 text-sm md:m-auto">
                 Get your brand well organized and more creative with our simple
                 service
               </p>
