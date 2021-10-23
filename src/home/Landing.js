@@ -38,8 +38,8 @@ export default function Landing() {
           <div className="flex flex-col items-center md:justify-between md:items-start md:w-4/5 md:flex-row">
             <div className="md:w-6/12 lg:w-6/12 xl:w-6/12">
               <h1
-                style={{ fontSize: "40px" }}
-                className="font-bold px-8 md:px-0 md:mb-5 leading-10 mb-2 opacity-90"
+            
+                className="font-bold text-fontSize-medium lg:text-fontSize-large xl:text-fontSize-xlarge px-8 md:px-0 md:mb-5 leading-10 mb-2 opacity-90"
               >
                 Keep your links organized{" "}
               </h1>
@@ -54,7 +54,7 @@ export default function Landing() {
 
             <div className="mt-4 md:-mt-14 lg:-mt-24">
               <img
-              className=" md:w-1/7 lg:w-1/14 xl:w-1/28"
+              className="w-1/7 md:w-1/7 lg:w-1/14 xl:w-1/28"
                 src="/homemockup.svg"
                 alt="hero"
               />
@@ -62,7 +62,7 @@ export default function Landing() {
           </div>
 
           {/* how it works section */}
-          <div className="mt-20 md:mb-22 bg-white w-full md:-mt-48 lg:-mt-64 xl:-mt-64 lg:pt-20 xl:pt-20 md:pt-20">
+          <div className="mt-20 md:mb-22 bg-white w-full md:-mt-48 lg:-mt-80 xl:-mt-80 lg:pt-20 xl:pt-20 md:pt-20">
             <div className="mb-16 md:mb-4 md:flex md:flex-col md:items-center">
               <h1
                 style={{ fontSize: "23px" }}

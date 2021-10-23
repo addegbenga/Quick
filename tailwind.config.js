@@ -30,6 +30,12 @@ module.exports = {
           lightest: "#f9fafc",
         },
       },
+      fontSize: {
+        "medium":"40px",
+        'large': '48px',
+        "xlarge":"54px"
+        
+      }
     },
     fontFamily: {
 
