@@ -48,7 +48,7 @@ export default function Landing() {
                 Qwikker lets you have your social links all in one place for
                 easy access and let's you reach more audience easily.
               </p>
-              <button className="px-5 mb-4 lg:py-5 xl:py-5 xl:px-6 lg:px-6 rounded py-3 text-sm bg-blue-800 text-white">
+              <button className="px-5 mb-4 lg:py-4 xl:py-4 xl:px-7 lg:px-7 lg:text-lg xl:text-lg rounded py-3 text-sm bg-blue-800 text-white">
                 Get started ⚡️
               </button>
             </div>
