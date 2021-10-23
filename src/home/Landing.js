@@ -36,7 +36,7 @@ export default function Landing() {
       <div className="">
         <div className="mt-44 lg:mt-60 xl:mt-60  flex items-center flex-col text-center md:text-left">
           <div className="flex flex-col items-center md:justify-between md:items-start md:w-4/5 md:flex-row">
-            <div className="md:w-6/12 lg:mt-24 xl:mt-24 lg:w-6/12 xl:w-6/12">
+            <div className="md:w-6/12 lg:mt-20 xl:mt-20 lg:w-6/12 xl:w-6/12">
               <h1
              
             
@@ -44,7 +44,7 @@ export default function Landing() {
               >
                 Keep your links organized{" "}
               </h1>
-              <p className="p-4  md:p-0 text-md mb-4 font-medium  text-gray-700">
+              <p className="p-4  md:p-0 text-md mb-4 lg:mb-6 xl:mb-6 font-medium  text-gray-700">
                 Qwikker lets you have your social links all in one place for
                 easy access and let's you reach more audience easily.
               </p>
