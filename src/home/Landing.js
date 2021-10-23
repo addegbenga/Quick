@@ -54,7 +54,7 @@ export default function Landing() {
 
             <div className="mt-4 md:-mt-14">
               <img
-              className="hero-image"
+              className=" md:w-1/7"
                 src="/homemockup.svg"
                 alt="hero"
               />
