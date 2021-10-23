@@ -2,6 +2,7 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+
     extend: {
       width: {
         '1/7': '20rem',
@@ -30,12 +31,7 @@ module.exports = {
           lightest: "#f9fafc",
         },
       },
-      fontSize: {
-        "medium":"40px",
-        'large': '48px',
-        "xlarge":"54px"
-        
-      }
+     
     },
     fontFamily: {
 

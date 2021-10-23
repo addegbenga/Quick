@@ -38,8 +38,9 @@ export default function Landing() {
           <div className="flex flex-col items-center md:justify-between md:items-start md:w-4/5 md:flex-row">
             <div className="md:w-6/12 lg:w-6/12 xl:w-6/12">
               <h1
+              style={{fontSize:"40px"}}
             
-                className="font-bold text-fontSize-medium lg:text-fontSize-large xl:text-fontSize-xlarge px-8 md:px-0 md:mb-5 leading-10 mb-2 opacity-90"
+                className="font-bold px-8 md:px-0 md:mb-5 leading-10 mb-2 opacity-90"
               >
                 Keep your links organized{" "}
               </h1>
