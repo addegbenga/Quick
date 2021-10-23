@@ -1,9 +1,9 @@
 import {
   LOGIN_USER,
   REGISTER_USER,
-  FORGOT_PASSWORD,
-  RESET_PASSWORD,
-  GET_AUTH_USER,
+  // FORGOT_PASSWORD,
+  // RESET_PASSWORD,
+  // GET_AUTH_USER,
 } from "../actions/types";
 
 const initialState = {

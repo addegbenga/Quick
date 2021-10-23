@@ -5,7 +5,7 @@ import Signin from "../auth/Signin";
 import Signup from "../auth/Signup";
 import AdminDashboard from "../dashboard/admin";
 import Landing from "../home/Landing";
-import { ProtectedRoute } from "./ProtectedRoute";
+// import { ProtectedRoute } from "./ProtectedRoute";
 
 export default function Routes() {
   return (

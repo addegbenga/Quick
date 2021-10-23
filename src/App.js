@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React from 'react'
 import "./App.css";
 import Routes from "./route/Routes";
 
@@ -26,3 +26,5 @@ function App() {
 }
 
 export default App;
+
+
