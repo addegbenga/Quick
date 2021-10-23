@@ -34,7 +34,7 @@ export default function Landing() {
     <>
       <Navbar />
       <div className="">
-        <div className="mt-44 lg:mt-64 xl:mt-64  flex items-center flex-col text-center md:text-left">
+        <div className="mt-44 lg:mt-72 xl:mt-72  flex items-center flex-col text-center md:text-left">
           <div className="flex flex-col items-center md:justify-between md:items-start md:w-4/5 md:flex-row">
             <div className="md:w-6/12 lg:mt-6 xl:mt-6 lg:w-6/12 xl:w-6/12">
               <h1
