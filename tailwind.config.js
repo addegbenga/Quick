@@ -13,12 +13,13 @@ module.exports = {
         current: "currentColor",
         textPrimaryColor: "#1e266d",
         bgPrimary: "#e5f7fe",
-        bgAccent: "#fefodd",
+        bgAccent: "#fef0dd",
         buttonPrimary: "#f6a425",
       },
 
       fontSize: {
-        customHeaderFontMobile: "2.4rem",
+        customHeaderFontMobile: "2.5rem",
+        customMediumFontMobile:"1.4rem"
       },
     },
   },
