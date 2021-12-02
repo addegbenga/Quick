@@ -69,7 +69,7 @@ export default function Home() {
     <>
       <Login isOpen={loginModalOpen} setIsOpen={setLoginModalOpen} />
       <div
-        className=" relative  flex pt-40 2xl:pt-72 items-center flex-col bg-bgPrimary  items-center"
+        className=" relative  flex pt-36 2xl:pt-72 items-center flex-col bg-bgPrimary  items-center"
         style={{ height: "100%", minHeight: "70vh" }}
       >
         <img

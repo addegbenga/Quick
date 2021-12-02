@@ -1,5 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import { FcGoogle } from "react-icons/fc";
+import { AiFillFacebook } from "react-icons/ai";
 
 export default function Login({ setIsOpen, isOpen }) {
   function closeModal() {
@@ -9,7 +11,11 @@ export default function Login({ setIsOpen, isOpen }) {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="fixed flex items-center justify-center inset-0 z-30 " onClose={closeModal}>
+        <Dialog
+          as="div"
+          className="fixed flex items-center justify-center inset-0 z-30 "
+          onClose={closeModal}
+        >
           <div className="min-h-screen px-4 text-center">
             <Transition.Child
               as={Fragment}
@@ -50,8 +56,9 @@ export default function Login({ setIsOpen, isOpen }) {
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     style={{ background: "#fef0dd" }}
-                    className=" p-4 rounded-lg text-textPrimaryColor  font-medium"
+                    className=" flex p-4 rounded-lg text-textPrimaryColor  font-medium"
                   >
+                    <FcGoogle cl size={24} />
                     Google
                   </button>
                   <button
@@ -61,7 +68,9 @@ export default function Login({ setIsOpen, isOpen }) {
                     Facebook
                   </button>
                 </div>
-                <p className="text-center text-textPrimaryColor text-opacity-80 text-lg my-5">or</p>
+                <p className="text-center text-textPrimaryColor text-opacity-80 text-lg my-5">
+                  or
+                </p>
                 <div>
                   <form className="grid grid-cols gap-3 ">
                     <label htmlFor="textbox">
@@ -80,7 +89,6 @@ export default function Login({ setIsOpen, isOpen }) {
                         className="w-full outline-none  p-3 rounded-lg "
                         placeholder="Enter your password"
                         style={{ background: "#eff0f5" }}
-                        
                       />
                     </label>
                   </form>
@@ -96,7 +104,10 @@ export default function Login({ setIsOpen, isOpen }) {
                   </button>
                 </div>
 
-                <p className="text-textPrimaryColor text-center text-xs px-10 ">By clicking the Continue button, you agree to the terms of service and privacy policy.</p>
+                <p className="text-textPrimaryColor text-center text-xs px-10 ">
+                  By clicking the Continue button, you agree to the terms of
+                  service and privacy policy.
+                </p>
               </div>
             </Transition.Child>
           </div>

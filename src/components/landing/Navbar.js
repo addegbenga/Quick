@@ -30,9 +30,9 @@ export default function Navbar() {
     <div
       style={{ marginTop: "4rem" }}
       className="
-       lg:hidden bg-white transform nav-show opacity-0  transition  z-30 py-10 px-5 fixed w-full"
+       lg:hidden bg-white transform nav-show opacity-0   transition  z-30 py-10 px-5 fixed w-full"
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col text-textPrimaryColor">
         <a className="mb-4" href="#div">
           Pricing
         </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
       <Register isOpen={registerOpenModal} setIsOpen={setRegisterOpenModal} />
       <NavMenu />
       <div
-        className="fixed top-0 w-full z-30"
+        className="fixed top-0 w-full border-b border-opacity-5 border-textPrimaryColor z-30"
         style={{ background: "#e5f7fe" }}
       >
         <header className="flex justify-between items-center md:px-12 2xl:w-5/6 2xl:m-auto lg:px-20 xl:px-32 lg:py-6  2xl:py-12 px-5 py-4">
