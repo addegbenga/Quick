@@ -39,7 +39,7 @@ export default function Index() {
       <Suspense
         fallback={
           <div className="flex justify-center items-center text-white h-screen text-4xl">
-            <img src="/assets/loder.svg" alt="loader" />
+           loading...
           </div>
         }
       >

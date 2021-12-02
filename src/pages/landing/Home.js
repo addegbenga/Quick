@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import Login from "../../components/auth/Login";
+import { Link } from "react-router-dom";
 
 import "./style.css";
 import Footer from "../../components/landing/Footer";
@@ -64,10 +64,10 @@ const data3 = [
   },
 ];
 export default function Home() {
-  const [loginModalOpen, setLoginModalOpen] = useState(false);
+  // const [loginModalOpen, setLoginModalOpen] = useState(false);
   return (
     <>
-      <Login isOpen={loginModalOpen} setIsOpen={setLoginModalOpen} />
+      {/* <Login isOpen={loginModalOpen} setIsOpen={setLoginModalOpen} /> */}
       <div
         className=" relative  flex pt-36 2xl:pt-72 items-center flex-col bg-bgPrimary  items-center"
         style={{ height: "100%", minHeight: "70vh" }}
@@ -84,11 +84,8 @@ export default function Home() {
           The modern retail platform for fast-moving brands.
         </h1>
 
-        <button
-          onClick={() => setLoginModalOpen(true)}
-          className="text-white 2xl:text-lg relative z-20 bg-buttonPrimary text-base font-semibold tracking-tight rounded-bl-full rounded-tl-full rounded-br-full xl:px-14 2xl:px-20 xl:py-6  mt-8 2xl:mt-8 px-12 md:py-5 py-6"
-        >
-          Try it for free now!
+        <button className="text-white 2xl:text-lg relative z-20 bg-buttonPrimary text-base font-semibold tracking-tight rounded-bl-full rounded-tl-full rounded-br-full xl:px-14 2xl:px-20 xl:py-6  mt-8 2xl:mt-8 px-12 md:py-5 py-6">
+          <Link to="login"> Try it for free now! </Link>
         </button>
         <span className="mt-5 mb-4 md:mb-10 lg:mb-20  text-textPrimaryColor">
           No credit card required
