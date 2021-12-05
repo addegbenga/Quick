@@ -3,7 +3,7 @@ import React from "react";
 export default function Subnavbar() {
   return (
     <div className="bg-white border-b py-5  ">
-      <div className="w-3/5 flex ml-7 text-sm ">
+      <div className="lg:w-3/5 flex ml-7 text-sm ">
         <a className="font-semibold mr-3" href="#div">
           Life time analytics:
         </a>

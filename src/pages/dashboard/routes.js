@@ -4,6 +4,7 @@ import NotFound from "./NotFound";
 import Navbar from "../../components/dashboard/Navbar";
 import QwikkerPanel from "../../components/dashboard/QwikkerPanel";
 import Sidebar from "../../components/dashboard/Sidebar";
+import PanelNav from "../../components/dashboard/PanelNav";
 import "./style.css";
 
 const Links = React.lazy(() => import("./Links"));
@@ -49,9 +50,12 @@ export default function Index() {
         }
       >
         <div className="w-full grid overflow-hidden   min-h-screen bg-bgSecondary relative">
-          <div className="flex">
+          <div className="flex flex-col lg:flex-row">
             <Sidebar />
-            <div className="w-3/5">
+            <div className="w-full lg:w-3/5">
+              <div className="lg:hidden">
+                <PanelNav />
+              </div>
               <Navbar />
               {element}
             </div>

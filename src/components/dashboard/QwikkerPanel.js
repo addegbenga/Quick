@@ -1,9 +1,10 @@
 import React from "react";
+import PanelNav from "./PanelNav";
 
 export default function QwikkerPanel() {
   return (
-    <div className=" w-1/2 border-l h-screen overflow-hidden  ">
-      <div className="h-16 flex items-center justify-between px-6 border-b  bg-white ">
+    <div className=" w-1/2 hidden lg:block border-l h-screen overflow-hidden  ">
+      {/* <div className="h-16 flex items-center justify-between px-6 border-b  bg-white ">
         <div className="flex text-sm">
           <h1 className="font-semibold mr-1">My Linktree:</h1>
           <a href="#div">https://linktree/drey</a>
@@ -11,7 +12,9 @@ export default function QwikkerPanel() {
         <button className="border py-1 px-3 rounded text-base text-opacity-60 text-black">
           Share
         </button>
-      </div>
+      </div> */}
+
+      <PanelNav/>
       <div
         style={{ height: "28rem", borderRadius: "2.5rem" }}
         className="bg-indigo-500 w-56 border-8 border-black m-auto mt-20  "

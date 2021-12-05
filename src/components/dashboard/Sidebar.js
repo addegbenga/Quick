@@ -1,9 +1,9 @@
 import React from "react";
-
+import { RiBarChartLine } from "react-icons/ri";
 export default function Sidebar() {
   return (
-    <div className="bg-white border min-h-full p-5 flex">
-      <div>
+    <div className="  lg:block bg-white border lg:min-h-full p-5 flex">
+      <div className="flex justify-between w-full ">
         <svg
           width="20"
           height="20"
@@ -20,6 +20,7 @@ export default function Sidebar() {
             fill="#151522"
           />
         </svg>
+        <RiBarChartLine className="lg:hidden transform -rotate-90" size={20} />
       </div>
     </div>
   );
