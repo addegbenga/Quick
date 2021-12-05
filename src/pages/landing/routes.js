@@ -1,5 +1,4 @@
 import React from "react";
-import Home from "./Home";
 import Login from "../auth/Login";
 import NotFound from "../dashboard/NotFound";
 import Register from "../auth/Register";
@@ -7,10 +6,7 @@ import {  useRoutes } from "react-router-dom";
 
 export default function Index() {
   let route = [
-    {
-      path: "",
-      element: <Home />,
-    },
+
     {
       path: "login",
       element: <Login />,

@@ -82,7 +82,7 @@ export default function Navbar() {
             onClick={() => {
               tl.reversed() ? tl.play() : tl.reverse();
             }}
-            className="md:hidden transform rotate-90"
+            className="md:hidden transform -rotate-90"
           >
             <RiBarChartLine size={20} />
           </div>

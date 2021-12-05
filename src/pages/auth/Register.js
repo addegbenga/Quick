@@ -2,20 +2,20 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 import "../landing/style.css";
-export default function Register() {
+export default function Login() {
   return (
-    <div className="flex justify-center pt-8 lg:pt-20 ">
-      <div className="inline-block w-full pt-10 max-w-xl p-6 md:px-10 py-12 my-8 overflow-hidden text-left align-middle transition-all lg:border transform bg-white card-shadow rounded-2xl">
-        <h3 className="text-2xl text-textPrimaryColor lg:text-3xl text-center mb-6 font-semibold font-medium leading-6 text-gray-900">
-          Register
+    <div className="flex justify-center pt-6 lg:pt-20 min-h-screen items-center  ">
+      <div className="inline-block w-full pt-10 max-w-xl p-6 md:px-10 py-12 my-8 overflow-hidden text-left align-middle transition-all lg:border transform bg-white lg:card-shadow rounded-2xl">
+        <h3 className="text-2xl tracking-tighter border-b pb-8 mb-10 border-blue-500 border-opacity-10 lg:pb-0 lg:border-0 text-textPrimaryColor lg:text-4xl text-center mb-6 font-semibold font-medium leading-6 text-gray-900">
+          Create your Account
         </h3>
 
-        <div className="grid grid-cols-2 gap-20">
+        <div className="grid grid-cols-2 gap-5 lg:gap-10">
           <button
             style={{ background: "#fef0dd" }}
             className=" flex p-4 rounded-lg text-textPrimaryColor justify-center   font-medium"
           >
-            <FcGoogle cl size={24} />
+            <FcGoogle  size={24} />
             Google
           </button>
           <button
@@ -26,17 +26,17 @@ export default function Register() {
             Facebook
           </button>
         </div>
-        <p className="text-center text-textPrimaryColor text-opacity-80 text-lg my-5">
+        <p className="text-center text-textPrimaryColor text-sm text-opacity-80 text-lg my-4 lg:my-5">
           Dont have an account?
         </p>
         <div>
           <form className="grid grid-cols gap-3 ">
-            <label htmlFor="username">
+          <label htmlFor="username">
               <input
                 type="text"
-                id="username"
-                className="w-full outline-none  p-3 rounded-lg"
-                placeholder="Username"
+                id="usernmae"
+                className="w-full outline-none text-sm py-5 lg:py-4  p-3 rounded-lg"
+                placeholder="Enter your username"
                 style={{ background: "#eff0f5" }}
               />
             </label>
@@ -44,8 +44,8 @@ export default function Register() {
               <input
                 type="text"
                 id="textbox"
-                className="w-full outline-none  p-3 rounded-lg"
-                placeholder="Email"
+                className="w-full outline-none text-sm py-5 lg:py-4  p-3 rounded-lg"
+                placeholder="Enter your email"
                 style={{ background: "#eff0f5" }}
               />
             </label>
@@ -53,8 +53,8 @@ export default function Register() {
               <input
                 type="password"
                 id="passwordbox"
-                className="w-full outline-none  p-3 rounded-lg "
-                placeholder="Password"
+                className="w-full text-sm py-5 lg:py-4  outline-none  p-3 rounded-lg "
+                placeholder="Enter your password"
                 style={{ background: "#eff0f5" }}
               />
             </label>
