@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { RiBarChartLine } from "react-icons/ri";
+import { AiOutlineAlignRight } from "react-icons/ai";
 import { gsap, Power1 } from "gsap/all";
 import { Link } from "react-router-dom";
 
@@ -55,7 +55,7 @@ export default function Navbar() {
         style={{ background: "#e5f7fe" }}
       >
         <header className="flex justify-between items-center md:px-12 2xl:w-5/6 2xl:m-auto lg:px-20 xl:px-32 lg:py-3  2xl:py-12 px-5 py-4">
-          <span className="text-textPrimaryColor md:text-3xl  2xl:text-4xl text-xl font-bold tracking-tight">
+          <span className="text-textPrimaryColor md:text-2xl   2xl:text-4xl text-xl font-bold tracking-tight">
             Qwikker
             <span className="text-buttonPrimary text-2xl 2xl:text-4xl ml-0.5">
               .
@@ -82,9 +82,9 @@ export default function Navbar() {
             onClick={() => {
               tl.reversed() ? tl.play() : tl.reverse();
             }}
-            className="md:hidden transform -rotate-90"
+            className="md:hidden "
           >
-            <RiBarChartLine size={20} />
+            <AiOutlineAlignRight size={20} />
           </div>
         </header>
       </div>

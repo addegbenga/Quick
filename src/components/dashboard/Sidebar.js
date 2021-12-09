@@ -1,5 +1,5 @@
 import React from "react";
-import { RiBarChartLine } from "react-icons/ri";
+import { AiOutlineAlignRight } from "react-icons/ai";
 export default function Sidebar() {
   return (
     <div className="  lg:block bg-white border lg:min-h-full p-5 flex">
@@ -20,7 +20,7 @@ export default function Sidebar() {
             fill="#151522"
           />
         </svg>
-        <RiBarChartLine className="lg:hidden transform -rotate-90" size={20} />
+        <AiOutlineAlignRight className="lg:hidden " size={20} />
       </div>
     </div>
   );

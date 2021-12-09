@@ -49,7 +49,7 @@ export default function Index() {
           </div>
         }
       >
-        <div className="w-full grid overflow-hidden   min-h-screen bg-bgSecondary relative">
+        <div style={{background:"#fafbfc"}} className="w-full grid overflow-hidden   min-h-screen  relative">
           <div className="flex flex-col lg:flex-row">
             <Sidebar />
             <div className="w-full lg:w-3/5">

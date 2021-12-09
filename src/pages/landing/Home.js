@@ -3,7 +3,6 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import "./style.css";
-import Footer from "../../components/landing/Footer";
 const data = [
   {
     img: "/assets/qwikkerasset2.png",
@@ -104,7 +103,7 @@ export default function Home() {
         </div>
       </div>
       {/* second section */}
-      <div className="mt-40 md:mt-64 lg:mt-96 md:px-32 lg:px-0  ">
+      <div style={{background:"#fafbfc"}} className="pt-40 md:pt-64 lg:pt-96 md:px-32 lg:px-0  ">
         <h1
           style={{ letterSpacing: "-0.2rem" }}
           className="px-5 text-center text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-textPrimaryColor font-semibold"
@@ -268,7 +267,7 @@ export default function Home() {
         </div>
       </div>
       {/* footer section */}
-      <Footer />
+      {/* <Footer /> */}
       {/* footer section */}
     </>
   );

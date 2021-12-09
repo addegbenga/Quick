@@ -1,4 +1,5 @@
 import {
+  LOAD_USER,
   LOGIN_USER,
   REGISTER_USER,
   // FORGOT_PASSWORD,
@@ -15,6 +16,13 @@ const initialState = {
 
 export const authReducer = (state = initialState, action) => {
   switch (action.type) {
+    case LOAD_USER:
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: action.payload,
+        loading: false,
+      };
     case REGISTER_USER:
       return {
         ...state,
