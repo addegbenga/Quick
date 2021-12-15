@@ -1,8 +1,15 @@
 import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { FcGoogle } from "react-icons/fc";
+import { loginUser } from "../../actions/authActions";
+import { useDispatch } from "react-redux";
 import { AiFillFacebook } from "react-icons/ai";
 import "../landing/style.css";
 export default function Login() {
+  const isAuth = useSelector((state) => state.auth.isAuthenticated);
+
+  const dispatch = useDispatch();
   const [form, setFormData] = useState({
     email: "",
     password: "",
@@ -14,8 +21,13 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(loginUser(form));
     console.log(form);
   };
+
+  if (isAuth) {
+    return <Navigate to="/dashboard" replace />;
+  }
 
   return (
     <div
@@ -72,7 +84,7 @@ export default function Login() {
 
             <div className="mt-4 mb-7">
               <button
-               type="submit"
+                type="submit"
                 className="inline-flex w-full p-4 justify-center text-white  text-base font-medium  bg-textPrimaryColor border border-transparent rounded-bl-full rounded-tl-full rounded-br-full hover:bg-buttonPrimary  focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
               >
                 Continue

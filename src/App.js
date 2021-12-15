@@ -18,6 +18,8 @@ export default function App() {
       if (!localStorage.token) store.dispatch({ type: LOGOUT_USER });
     });
   }, []);
+
+
   return (
     <div>
       <RoutesPages />

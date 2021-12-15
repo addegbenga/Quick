@@ -7,6 +7,8 @@ import { IoEyeSharp } from "react-icons/io5";
 import { VscTrash } from "react-icons/vsc";
 import {
   // AiOutlineNodeIndex,
+  AiOutlineAppstoreAdd,
+  AiFillThunderbolt,
   AiOutlinePicture,
   AiOutlineStar,
 } from "react-icons/ai";
@@ -90,30 +92,23 @@ export default function Links() {
             <div className="flex gap-2 lg:gap-4">
               <button
                 onClick={() => handleAddNewLinkForm()}
-                className="bg-indigo-600 px-5 w-full font-semibold rounded-lg py-4 text-white"
+                className="bg-indigo-600 flex items-center gap-1 justify-center px-5 w-full font-semibold rounded-lg py-4 text-white"
               >
-                Add new Link
+                <AiOutlineAppstoreAdd size={22} /> Add new Link
               </button>
-              <button className="bg-black w-1/2 font-semibold rounded-lg px-5 py-4 text-white">
-                Explore
+              <button className="bg-black w-1/2 gap-1 flex justify-center items-center font-semibold rounded-lg px-5 py-4 text-white">
+                <AiFillThunderbolt size={22} /> Explore
               </button>
             </div>
 
             <div className="mt-10   rounded-lg">
               <div ref={viewRef}>
                 {myForms?.map((item, index) => (
-                  <>
-                    <div
-                      key={item.id}
-                      className="mb-3 shadow-lg bg-white flex w-full rounded border bg-white"
-                    >
-                      {/* <div className="lg:bg-gray-200 w-2"></div> */}
+                  <div key={index}>
+                    <div className="mb-3 shadow-lg bg-white flex w-full rounded border bg-white">
                       <div className="w-full  p-4 pb-7">
                         <div className="flex items-center justify-between mb-2">
                           <div className="flex text-black text-opacity-100 items-center relative group ">
-                            {/* <button className="mr-1  text-black text-opacity-60 font-semibold   ">
-                          Title
-                        </button> */}
                             <input
                               value={item.title}
                               onChange={(e) => {
@@ -128,11 +123,9 @@ export default function Links() {
                               placeholder="Title"
                               type="text"
                             />
-                            {/* <button className=" ">
-                          <BsFillPencilFill size={11} />
-                        </button> */}
+                     
                           </div>
-                          {/* <MyToggle enabled={item.enabled} item={item} /> */}
+                  
                           <input
                             value={item.enabled}
                             onChange={(e) => {
@@ -232,7 +225,7 @@ export default function Links() {
                         </div>
                       </div>
                     ) : null}
-                  </>
+                  </div>
                 ))}
               </div>
             </div>

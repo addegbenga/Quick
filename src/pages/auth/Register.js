@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
-import { registerUser } from "../../actions/authActions";
+import {registerUser} from "../../actions/authActions"
 import { useDispatch } from "react-redux";
 import "../landing/style.css";
 export default function Register() {
@@ -17,10 +17,8 @@ export default function Register() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(form);
-
-    dispatch(registerUser());
-    console.log(form);
+    e.preventDefault();
+    dispatch(registerUser(form))
   };
   return (
     <div className="flex justify-center pt-6 lg:pt-20 min-h-screen items-center  ">
