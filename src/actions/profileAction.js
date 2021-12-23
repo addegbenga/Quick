@@ -14,7 +14,7 @@ export const addLink = (body) => async (dispatch) => {
       dispatch({
         type: LOADING,
       });
-      const response = await api.post(`/v1/profile/create`);
+      const response = await api.post(`https://qwikker-staging.herokuapp.com/v1/profile/create`);
       console.log(response)
       dispatch({
         type: ADD_LINK,
@@ -34,7 +34,7 @@ export const editLink = (body) => async (dispatch) => {
       dispatch({
         type: LOADING,
       });
-      const response = await api.post(`/v1/profile/edit`, body);
+      const response = await api.post(`https://qwikker-staging.herokuapp.com/v1/profile/edit`, body);
       console.log(body)
       dispatch({
         type: EDIT_LINK,
@@ -54,7 +54,7 @@ export const getAllLink = () => async (dispatch) => {
       dispatch({
         type: LOADING,
       });
-      const response = await api.get(`/v1/profile/get_profile`);
+      const response = await api.get(`https://qwikker-staging.herokuapp.com/v1/profile/get_profile`);
       dispatch({
         type: GET_LINK,
         payload: response.data,
