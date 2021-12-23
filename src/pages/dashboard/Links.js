@@ -1,10 +1,13 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef,} from "react";
 import Subnavbar from "../../components/dashboard/Subnavbar";
+import { useDispatch, useSelector } from "react-redux";
+import { addLink, getAllLink, editLink } from "../../actions/profileAction";
 // import { BsFillPencilFill } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import PreviewModal from "../../components/dashboard/PreviewModal";
 import { IoEyeSharp } from "react-icons/io5";
 import { VscTrash } from "react-icons/vsc";
+import { useDebouncedCallback } from "use-debounce";
 import {
   // AiOutlineNodeIndex,
   AiOutlineAppstoreAdd,
@@ -19,13 +22,27 @@ import { useState } from "react";
 import { Switch } from "@headlessui/react";
 
 export default function Links() {
+  const profile = useSelector((state) => state.profile.profile);
+  const dispatch = useDispatch();
   const [enableds, setEnabled] = useState(false);
   const [openPreview, setOpenPreview] = useState(false);
   const viewRef = useRef(null);
 
-  const [myForms, setMyForms] = useState([
-    { title: "Big boy1", url: "link1", id: "10", enabled: false, show: true },
-  ]);
+  const [myForms, setMyForms] = useState(profile);
+  const debouceTitle = useDebouncedCallback(
+    (title, id) => {
+      dispatch(editLink({ title: title, linkId: id }));
+    },
+    1000
+    // { maxWait: 2000 }
+  );
+  const debouceUrl = useDebouncedCallback(
+    (linkurl, id) => {
+      dispatch(editLink({ linkurl: linkurl, linkId: id }));
+    },
+    1000
+    // { maxWait: 2000 }
+  );
 
   // eslint-disable-next-line no-unused-vars
   const MyToggle = (props) => (
@@ -45,6 +62,14 @@ export default function Links() {
     </Switch>
   );
 
+  useEffect(() => {
+    dispatch(getAllLink());
+  }, [dispatch]);
+
+  useEffect(() => {
+    setMyForms(profile);
+  }, [profile]);
+
   const handleModalClose = () => {
     setOpenPreview(false);
   };
@@ -52,33 +77,36 @@ export default function Links() {
   const handleDropDownOpen = (item) => {
     const enabled = true;
     setMyForms((current) =>
-      current.map((x) => (x.id === item.id ? { ...x, enabled } : x))
+      current.map((x) => (x._id === item._id ? { ...x, enabled } : x))
     );
   };
   const handleDropDownClose = (item) => {
     const enabled = false;
     setMyForms((current) =>
-      current.map((x) => (x.id === item.id ? { ...x, enabled } : x))
+      current.map((x) => (x._id === item._id ? { ...x, enabled } : x))
     );
   };
 
   const handleAddNewLinkForm = () => {
-    setMyForms((current) => [
-      ...current,
-      {
-        id: Math.random() * 100,
-        title: "",
-        url: "",
-        enabled: false,
-        show: true,
-      },
-    ]);
+    dispatch(addLink());
     viewRef.current.scrollIntoView({
       behavior: "smooth",
       block: "end",
       inline: "nearest",
     });
   };
+
+  const handleTitleChange = (title, id) => {
+    setMyForms((current) =>
+      current.map((x) => (x._id === id ? { ...x, title } : x))
+    );
+  };
+  const handleUrlChange = (linkurl, id) => {
+    setMyForms((current) =>
+      current.map((x) => (x._id === id ? { ...x, linkurl } : x))
+    );
+  };
+
   return (
     <>
       <PreviewModal isOpen={openPreview} closeModal={handleModalClose} />
@@ -113,19 +141,17 @@ export default function Links() {
                               value={item.title}
                               onChange={(e) => {
                                 const title = e.target.value;
-                                setMyForms((current) =>
-                                  current.map((x) =>
-                                    x.id === item.id ? { ...x, title } : x
-                                  )
-                                );
+                                handleTitleChange(title, item._id);
+                                debouceTitle(title, item._id);
                               }}
+                              // }}
+
                               className=" outline-none font-semibold text-opacity-80 text-black "
                               placeholder="Title"
                               type="text"
                             />
-                     
                           </div>
-                  
+
                           <input
                             value={item.enabled}
                             onChange={(e) => {
@@ -146,18 +172,13 @@ export default function Links() {
                               type="text"
                               className=" outline-none "
                               placeholder="Enter your url"
-                              value={item.url}
+                              value={item.linkurl}
                               onChange={(e) => {
                                 const url = e.target.value;
-                                setMyForms((current) =>
-                                  current.map((x) =>
-                                    x.id === item.id ? { ...x, url } : x
-                                  )
-                                );
+                                handleUrlChange(url, item._id);
+                                debouceUrl(url, item._id);
                               }}
                             />
-                            {/* <h1 className="mr-1 ">Url</h1>
-                        <BsFillPencilFill size={11} /> */}
                           </div>
                         </div>
 
