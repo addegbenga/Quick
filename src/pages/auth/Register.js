@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
+import {registerUser} from "../../actions/authActions"
+import { useDispatch } from "react-redux";
 import "../landing/style.css";
-export default function Login() {
+export default function Register() {
+  const dispatch = useDispatch();
+  const [form, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(registerUser(form))
+  };
   return (
     <div className="flex justify-center pt-6 lg:pt-20 min-h-screen items-center  ">
       <div className="inline-block w-full pt-10 max-w-xl p-6 md:px-10 py-12 my-8 overflow-hidden text-left align-middle transition-all lg:border transform bg-white lg:card-shadow rounded-2xl">
@@ -15,7 +32,7 @@ export default function Login() {
             style={{ background: "#fef0dd" }}
             className=" flex p-4 rounded-lg text-textPrimaryColor justify-center   font-medium"
           >
-            <FcGoogle  size={24} />
+            <FcGoogle size={24} />
             Google
           </button>
           <button
@@ -30,44 +47,49 @@ export default function Login() {
           Dont have an account?
         </p>
         <div>
-          <form className="grid grid-cols gap-3 ">
-          <label htmlFor="username">
-              <input
-                type="text"
-                id="usernmae"
-                className="w-full outline-none text-sm py-5 lg:py-4  p-3 rounded-lg"
-                placeholder="Enter your username"
-                style={{ background: "#eff0f5" }}
-              />
-            </label>
-            <label htmlFor="textbox">
-              <input
-                type="text"
-                id="textbox"
-                className="w-full outline-none text-sm py-5 lg:py-4  p-3 rounded-lg"
-                placeholder="Enter your email"
-                style={{ background: "#eff0f5" }}
-              />
-            </label>
-            <label htmlFor="passwordbox">
-              <input
-                type="password"
-                id="passwordbox"
-                className="w-full text-sm py-5 lg:py-4  outline-none  p-3 rounded-lg "
-                placeholder="Enter your password"
-                style={{ background: "#eff0f5" }}
-              />
-            </label>
-          </form>
-        </div>
+          <form onSubmit={handleSubmit} className="grid grid-cols gap-3 ">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={form.username}
+              onChange={(e) => handleChange(e)}
+              className="w-full outline-none text-sm py-5 lg:py-4  p-3 rounded-lg"
+              placeholder="Enter your username"
+              style={{ background: "#eff0f5" }}
+            />
 
-        <div className="mt-4 mb-7">
-          <button
-            type="button"
-            className="inline-flex w-full p-4 justify-center text-white  text-base font-medium  bg-textPrimaryColor border border-transparent rounded-bl-full rounded-tl-full rounded-br-full hover:bg-buttonPrimary  focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-          >
-            Continue
-          </button>
+            <input
+              type="text"
+              name="email"
+              onChange={(e) => handleChange(e)}
+              value={form.email}
+              id="textbox"
+              className="w-full outline-none text-sm py-5 lg:py-4  p-3 rounded-lg"
+              placeholder="Enter your email"
+              style={{ background: "#eff0f5" }}
+            />
+
+            <input
+              type="password"
+              value={form.password}
+              name="password"
+              onChange={(e) => handleChange(e)}
+              id="passwordbox"
+              className="w-full text-sm py-5 lg:py-4  outline-none  p-3 rounded-lg "
+              placeholder="Enter your password"
+              style={{ background: "#eff0f5" }}
+            />
+
+            <div className="mt-4 mb-7">
+              <button
+                type="submit"
+                className="inline-flex w-full p-4 justify-center text-white  text-base font-medium  bg-textPrimaryColor border border-transparent rounded-bl-full rounded-tl-full rounded-br-full hover:bg-buttonPrimary  focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+              >
+                Continue
+              </button>
+            </div>
+          </form>
         </div>
 
         <p className="text-textPrimaryColor text-center text-xs px-10 ">

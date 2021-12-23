@@ -1,4 +1,5 @@
 import {
+  LOAD_USER,
   LOGIN_USER,
   REGISTER_USER,
   // FORGOT_PASSWORD,
@@ -11,23 +12,40 @@ const initialState = {
   isAuthenticated: false,
   user: null,
   loading: true,
+  apiloading:false
 };
 
 export const authReducer = (state = initialState, action) => {
   switch (action.type) {
-    case REGISTER_USER:
-      return {
-        ...state,
-        user: action.payload,
-        loading: false,
-      };
-    case LOGIN_USER:
+    case LOAD_USER:
       return {
         ...state,
         isAuthenticated: true,
         user: action.payload,
         loading: false,
+        apiloading:false
       };
+    case REGISTER_USER:
+      return {
+        ...state,
+        user: action.payload,
+        loading: false,
+        apiloading:false
+      };
+    case LOGIN_USER:
+      return {
+        ...state,
+        ...action.payload,
+        isAuthenticated: true,
+        user: action.payload,
+        loading: false,
+        apiloading:false
+      };
+      case "LOADING":
+        return {
+          ...state,
+          apiloading: true,
+        };
     default:
       return state;
   }

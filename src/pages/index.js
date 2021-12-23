@@ -3,8 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./landing/Layout";
 import Home from "../pages/landing/Home";
 import DashBoardPages from "./dashboard/routes";
-
-
 import LandingPage from "./landing/routes";
 
 export default function index() {
