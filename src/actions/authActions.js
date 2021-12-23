@@ -51,7 +51,7 @@ export const loginUser = (body) => async (dispatch) => {
     dispatch({
       type: LOADING,
     });
-    const response = await api.post(`https://qwikker-staging.herokuapp.com/v1/auth/login`, body);
+    const response = await api.post(`/v1/auth/login`, body);
     dispatch({
       type: LOGIN_USER,
       payload: response.data,
@@ -70,7 +70,7 @@ export const registerUser = (body) => async (dispatch) => {
     dispatch({
       type: LOADING,
     });
-    const response = await api.post(`https://qwikker-staging.herokuapp.com/v1/auth/register`, body);
+    const response = await api.post(`/v1/auth/register`, body);
     dispatch({
       type: REGISTER_USER,
       payload: response.data,
@@ -82,4 +82,22 @@ export const registerUser = (body) => async (dispatch) => {
     });
   }
 };
+
+// export const editUser = (body) => async (dispatch) => {
+//   try {
+//     dispatch({
+//       type: LOADING,
+//     });
+//     const response = await api.post(`/api/v1/auth/edit`, body);
+//     dispatch({
+//       type: EDIT_USER_DETAILS,
+//       payload: response.data.data,
+//     });
+//   } catch (error) {
+//     dispatch({
+//       type: EDIT_USER_DETAILS_ERROR,
+//       payload: error.response.data,
+//     });
+//   }
+// };
 
