@@ -6,8 +6,6 @@ export default function MyDashboard() {
 
   return (
     <>
-    
-      <Index />
       <Outlet />
     </>
   );
