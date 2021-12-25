@@ -64,13 +64,7 @@ export default function Index() {
             </div>
             <Navbar />
 
-            {loading ? (
-              <div>loading...</div>
-            ) : isAuth ? (
-              element
-            ) : (
-              <Navigate to="/login" replace />
-            )}
+            {loading ? "" : isAuth ? element : <Navigate to="/login" replace />}
           </div>
           <QwikkerPanel />
         </div>

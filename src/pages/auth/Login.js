@@ -8,6 +8,7 @@ import { AiFillFacebook } from "react-icons/ai";
 import "../landing/style.css";
 export default function Login() {
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
+  const loading = useSelector((state) => state.auth.apiloading);
 
   const dispatch = useDispatch();
   const [form, setFormData] = useState({
@@ -62,6 +63,7 @@ export default function Login() {
           <form onSubmit={handleSubmit} className="grid grid-cols gap-3  ">
             <input
               type="text"
+              required
               id="textbox"
               name="email"
               value={form.email}
@@ -73,6 +75,7 @@ export default function Login() {
 
             <input
               type="password"
+              required
               id="passwordbox"
               name="password"
               value={form.password}
@@ -85,9 +88,16 @@ export default function Login() {
             <div className="mt-4 mb-7">
               <button
                 type="submit"
-                className="inline-flex w-full p-4 justify-center text-white  text-base font-medium  bg-textPrimaryColor border border-transparent rounded-bl-full rounded-tl-full rounded-br-full hover:bg-buttonPrimary  focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                className="flex w-full p-3 justify-center items-center text-white  text-base font-medium  bg-textPrimaryColor border border-transparent rounded-bl-full rounded-tl-full rounded-br-full hover:bg-buttonPrimary  focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
               >
-                Continue
+                {loading ? (
+                  <>
+                    <span>Continue</span>
+                    <img src="/assets/loading.svg " className="w-8" alt="loading" />
+                  </>
+                ) : (
+                  <span>Continue</span>
+                )}
               </button>
             </div>
           </form>
