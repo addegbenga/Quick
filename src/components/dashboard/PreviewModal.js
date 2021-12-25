@@ -41,13 +41,13 @@ export default function PreviewModal(props) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="inline-block w-full h-screen max-w-md p-6 mb-10   text-left align-middle transition-all transform  shadow-xl rounded-2xl">
+              <div className="inline-block w-full h-screen max-w-md p-1 mb-10   text-left align-middle transition-all transform  shadow-xl rounded-2xl">
                 <div>
                   <div
                     style={{
-                      borderRadius: "4.5rem",
+                      borderRadius: "4.3rem",
                       height: "100vh",
-                      borderWidth: "1.1rem",
+                      borderWidth: "1.3rem",
                     }}
                     className="bg-indigo-500 relative   border-black  "
                   >

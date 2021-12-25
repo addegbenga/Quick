@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Subnavbar from "./Subnavbar";
 import QwikkerPanel from "./QwikkerPanel";
 import Sidebar from "./Sidebar";
+import "./style.css";
 
 
 
