@@ -2,8 +2,10 @@ import React from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { FaTimes } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 export default function PreviewModal(props) {
+  const profile = useSelector((state) => state.profile.profile);
   return (
     <>
       <Transition appear show={props.isOpen} as={Fragment}>
@@ -49,7 +51,7 @@ export default function PreviewModal(props) {
                       height: "100vh",
                       borderWidth: "1.3rem",
                     }}
-                    className="bg-indigo-500 relative   border-black  "
+                    className="bg-indigo-500 relative scrollbar overflow-y-auto   border-black  "
                   >
                     <div className="flex items-center flex-col text-sm mt-12">
                       <div className="h-24 w-24 rounded-full bg-red-200"></div>
@@ -62,24 +64,26 @@ export default function PreviewModal(props) {
                     </div>
 
                     <div className=" w-11/12 m-auto mt-6">
-                      <div className="bg-white rounded-full text-center p-5 mb-3">
-                        <h1 className="text-sm text-black text-opacity-80">
-                          Facebook link
-                        </h1>
-                      </div>
-                      <div className="bg-white rounded-full text-center p-5 mb-3">
-                        <h1 className="text-sm text-black text-opacity-80">
-                          Twitter link
-                        </h1>
-                      </div>
-                      <div className="bg-white rounded-full text-center p-5">
-                        <h1 className="text-sm text-black text-opacity-80">
-                          Whatsapp link
-                        </h1>
-                      </div>
+                      {profile.map((item, index) => (
+                        <div key={item._id}>
+                          <div className="bg-white rounded-full text-center p-5 mb-3">
+                            <a
+                              href={item.linkurl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-sm text-black text-opacity-80"
+                            >
+                              {item.title}
+                            </a>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                     <div className="absolute bottom-6 flex items-center   w-full  justify-center">
-                      <button onClick={props.closeModal} className=" bg-gray-300 p-4 rounded-full">
+                      <button
+                        onClick={props.closeModal}
+                        className=" bg-gray-300 p-4 rounded-full"
+                      >
                         <FaTimes />
                       </button>
                     </div>
