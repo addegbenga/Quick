@@ -15,7 +15,7 @@ export const loadUser = () => async (dispatch) => {
   try {
     const response = await api.get(`/v1/auth/me`);
     dispatch({
-      type:"LOADING"
+      type:LOADING
     })
 
     dispatch({

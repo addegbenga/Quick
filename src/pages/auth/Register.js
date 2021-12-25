@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 import {registerUser} from "../../actions/authActions"
+import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import "../landing/style.css";
 export default function Register() {
+  const loading = useSelector((state) => state.auth.apiloading);
   const dispatch = useDispatch();
   const [form, setFormData] = useState({
     username: "",
@@ -86,7 +88,14 @@ export default function Register() {
                 type="submit"
                 className="inline-flex w-full p-4 justify-center text-white  text-base font-medium  bg-textPrimaryColor border border-transparent rounded-bl-full rounded-tl-full rounded-br-full hover:bg-buttonPrimary  focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
               >
-                Continue
+              {loading ? (
+                  <>
+                    <span>Continue</span>
+                    <img src="/assets/loading.svg " className="w-8" alt="loading" />
+                  </>
+                ) : (
+                  <span>Continue</span>
+                )}
               </button>
             </div>
           </form>
