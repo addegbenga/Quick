@@ -46,6 +46,7 @@ export const authReducer = (state = initialState, action) => {
         loading: false,
         apiloading: false,
       };
+
     case LOADING:
       return {
         ...state,
@@ -56,7 +57,7 @@ export const authReducer = (state = initialState, action) => {
         ...state,
         isAuthenticated: false,
         loading: false,
-        apiloading:false
+        apiloading: false,
       };
 
     case LOGIN_ERROR:

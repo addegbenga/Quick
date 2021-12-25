@@ -1,7 +1,12 @@
-import React, { useEffect, useRef,} from "react";
+import React, { useEffect, useRef } from "react";
 import Subnavbar from "../../components/dashboard/Subnavbar";
 import { useDispatch, useSelector } from "react-redux";
-import { addLink, getAllLink, editLink } from "../../actions/profileAction";
+import {
+  addLink,
+  getAllLink,
+  editLink,
+  deleteProfile,
+} from "../../actions/profileAction";
 // import { BsFillPencilFill } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import PreviewModal from "../../components/dashboard/PreviewModal";
@@ -23,6 +28,7 @@ import { Switch } from "@headlessui/react";
 
 export default function Links() {
   const profile = useSelector((state) => state.profile.profile);
+  const loading = useSelector((state) => state.profile.apiloading);
   const dispatch = useDispatch();
   const [enableds, setEnabled] = useState(false);
   const [openPreview, setOpenPreview] = useState(false);
@@ -32,6 +38,7 @@ export default function Links() {
   const debouceTitle = useDebouncedCallback(
     (title, id) => {
       dispatch(editLink({ title: title, linkId: id }));
+      dispatch(getAllLink());
     },
     1000
     // { maxWait: 2000 }
@@ -39,6 +46,7 @@ export default function Links() {
   const debouceUrl = useDebouncedCallback(
     (linkurl, id) => {
       dispatch(editLink({ linkurl: linkurl, linkId: id }));
+      dispatch(getAllLink());
     },
     1000
     // { maxWait: 2000 }
@@ -76,14 +84,32 @@ export default function Links() {
 
   const handleDropDownOpen = (item) => {
     const enabled = true;
+    const deleteDrop = false;
     setMyForms((current) =>
-      current.map((x) => (x._id === item._id ? { ...x, enabled } : x))
+      current.map((x) =>
+        x._id === item._id ? { ...x, enabled, deleteDrop } : x
+      )
     );
   };
   const handleDropDownClose = (item) => {
     const enabled = false;
+    const deleteDrop = false;
     setMyForms((current) =>
-      current.map((x) => (x._id === item._id ? { ...x, enabled } : x))
+      current.map((x) =>
+        x._id === item._id ? { ...x, enabled, deleteDrop } : x
+      )
+    );
+  };
+
+  //functions to handle delete functions
+
+  const handleDropDownOpenDelete = (item) => {
+    const enabled = false;
+    const deleteDrop = true;
+    setMyForms((current) =>
+      current.map((x) =>
+        x._id === item._id ? { ...x, enabled, deleteDrop } : x
+      )
     );
   };
 
@@ -120,9 +146,19 @@ export default function Links() {
             <div className="flex gap-2 lg:gap-4">
               <button
                 onClick={() => handleAddNewLinkForm()}
-                className="bg-indigo-600 flex items-center gap-1 justify-center px-5 w-full font-semibold rounded-lg py-4 text-white"
+                className="bg-indigo-600 flex items-center gap-1 justify-center px-5 w-full font-semibold rounded-lg py-3 text-white"
               >
-                <AiOutlineAppstoreAdd size={22} /> Add new Link
+                {loading ? (
+                  <img
+                    src="/assets/loading.svg"
+                    className="w-7"
+                    alt="loading"
+                  />
+                ) : (
+                  <>
+                    <AiOutlineAppstoreAdd size={22} /> <span>Add new Link</span>{" "}
+                  </>
+                )}
               </button>
               <button className="bg-black w-1/2 gap-1 flex justify-center items-center font-semibold rounded-lg px-5 py-4 text-white">
                 <AiFillThunderbolt size={22} /> Explore
@@ -144,8 +180,6 @@ export default function Links() {
                                 handleTitleChange(title, item._id);
                                 debouceTitle(title, item._id);
                               }}
-                            
-
                               className=" outline-none font-semibold text-opacity-80 text-black "
                               placeholder="Title"
                               type="text"
@@ -210,11 +244,10 @@ export default function Links() {
                           </div>
 
                           <button
-                            onClick={() =>
-                              setMyForms((current) =>
-                                current.filter((x) => x.id !== item.id)
-                              )
-                            }
+                            className="focus:ring-2 focus:text-green-400  focus:text-opacity-80 rounded    focus:ring-black"
+                            onClick={() => {
+                              handleDropDownOpenDelete(item);
+                            }}
                           >
                             <VscTrash />
                           </button>
@@ -243,6 +276,46 @@ export default function Links() {
                           <button className="bg-indigo-500 p-2 rounded-lg w-full text-white font-semibold">
                             Set Thumbnail
                           </button>
+                        </div>
+                      </div>
+                    ) : null}
+                    {item.deleteDrop ? (
+                      <div className="mb-6">
+                        <div className="py-1 justify-center items-center relative flex">
+                          <h1 className="text-center  font-bold ">Delete</h1>
+                          <button
+                            className="absolute right-0"
+                            onClick={() => handleDropDownClose(item)}
+                          >
+                            <AiOutlineClose size={20} />
+                          </button>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg pb-6  px-3 text-center">
+                          <p className="py-3 lg:text-lg">
+                            Delete this forever?
+                          </p>
+                          <div className="flex gap-3 ">
+                            <button className="bg-gray-200 p-2 w-1/2 rounded-lg  text-black font-semibold">
+                              cancel
+                            </button>
+                            <button
+                              onClick={() =>
+                                dispatch(deleteProfile({ id: item._id }))
+                              }
+                              className="p-1.5 w-1/2 rounded-lg flex gap-3 text-white items-center justify-center text-center font-semibold bg-black"
+                            >
+                              {loading ? (
+                                <img
+                                  src="/assets/loading.svg"
+                                  className="w-8"
+                                  alt="loading"
+                                />
+                              ) : (
+                                <span>Delete</span>
+                              )}
+                            </button>
+                          </div>
                         </div>
                       </div>
                     ) : null}

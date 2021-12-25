@@ -44,7 +44,9 @@ export default function Index() {
 
   let element = useRoutes(routes);
 
-  return (
+  return loading ? (
+    ""
+  ) : isAuth ? (
     <Suspense
       fallback={
         <div className="flex justify-center items-center text-white h-screen text-4xl">
@@ -64,11 +66,13 @@ export default function Index() {
             </div>
             <Navbar />
 
-            {loading ? "" : isAuth ? element : <Navigate to="/login" replace />}
+            {element}
           </div>
           <QwikkerPanel />
         </div>
       </div>
     </Suspense>
+  ) : (
+    <Navigate to="/login" replace />
   );
 }

@@ -10,13 +10,12 @@ import {
 
 import { api } from "../utils/api";
 
-
 export const loadUser = () => async (dispatch) => {
   try {
     const response = await api.get(`/v1/auth/me`);
     dispatch({
-      type:LOADING
-    })
+      type: LOADING,
+    });
 
     dispatch({
       type: LOAD_USER,
@@ -29,6 +28,8 @@ export const loadUser = () => async (dispatch) => {
     });
   }
 };
+
+
 
 // export const googleLogin = (body) => async (dispatch) => {
 //   try {
@@ -100,4 +101,3 @@ export const registerUser = (body) => async (dispatch) => {
 //     });
 //   }
 // };
-
