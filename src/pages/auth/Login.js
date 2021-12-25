@@ -63,6 +63,7 @@ export default function Login() {
           <form onSubmit={handleSubmit} className="grid grid-cols gap-3  ">
             <input
               type="text"
+              required
               id="textbox"
               name="email"
               value={form.email}
@@ -74,6 +75,7 @@ export default function Login() {
 
             <input
               type="password"
+              required
               id="passwordbox"
               name="password"
               value={form.password}

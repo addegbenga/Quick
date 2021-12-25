@@ -53,6 +53,7 @@ export default function Register() {
             <input
               type="text"
               id="username"
+              required
               name="username"
               value={form.username}
               onChange={(e) => handleChange(e)}
@@ -66,6 +67,7 @@ export default function Register() {
               name="email"
               onChange={(e) => handleChange(e)}
               value={form.email}
+              required
               id="textbox"
               className="w-full outline-none text-sm py-5 lg:py-4  p-3 rounded-lg"
               placeholder="Enter your email"
@@ -74,6 +76,7 @@ export default function Register() {
 
             <input
               type="password"
+              required
               value={form.password}
               name="password"
               onChange={(e) => handleChange(e)}
