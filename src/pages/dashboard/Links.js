@@ -115,11 +115,13 @@ export default function Links() {
 
   const handleAddNewLinkForm = () => {
     dispatch(addLink());
-    viewRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-      inline: "nearest",
-    });
+    // if (!loading) {
+    //   viewRef.current.scrollIntoView({
+    //     behavior: "smooth",
+    //     block: "end",
+    //     inline: "nearest",
+    //   });
+    // }
   };
 
   const handleTitleChange = (title, id) => {
