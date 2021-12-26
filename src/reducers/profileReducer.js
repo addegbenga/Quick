@@ -1,7 +1,7 @@
 import { ADD_LINK, GET_LINK, GET_LINK_ERROR, LOADING } from "../actions/types";
 
 const initialState = {
-  profile: [],
+  profile: null,
   loading: true,
   apiloading: false,
   error: {},
@@ -28,9 +28,10 @@ export const profileReducer = (state = initialState, action) => {
         ...state,
 
         loading: false,
-        profile: [
-          ...state.profile.filter((item) => item._id !== action.payload._id),
-        ],
+        profile: state.profile.filter(
+          (item) => item._id !== action.payload._id
+        ),
+
         apiloading: false,
       };
     case LOADING:
