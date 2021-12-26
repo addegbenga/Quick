@@ -64,7 +64,7 @@ export default function PreviewModal(props) {
                     </div>
 
                     <div className=" w-11/12 m-auto mt-6">
-                      {profile.map((item, index) => (
+                      {profile?.map((item, index) => (
                         <div key={item._id}>
                           <div className="bg-white rounded-full text-center p-5 mb-3">
                             <a

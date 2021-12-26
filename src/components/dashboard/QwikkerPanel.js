@@ -28,7 +28,7 @@ export default function QwikkerPanel() {
         </div>
 
         <div className=" w-11/12 m-auto mt-4">
-          {profile.map((item, index) => (
+          {profile?.map((item, index) => (
             <div key={item._id}>
               <div className="bg-white h-8 rounded-full text-center  flex justify-center items-center mb-3">
                 <a

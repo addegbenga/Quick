@@ -124,6 +124,10 @@ export default function Links() {
     // }
   };
 
+  const handleDelete = (item) => {
+    dispatch(deleteProfile({ id: item._id }));
+  };
+
   const handleTitleChange = (title, id) => {
     setMyForms((current) =>
       current.map((x) => (x._id === id ? { ...x, title } : x))
@@ -176,7 +180,8 @@ export default function Links() {
                         <div className="flex items-center justify-between mb-2">
                           <div className="flex text-black text-opacity-100 items-center relative group ">
                             <input
-                              value={item.title}
+                              value={item.title || ""}
+                            
                               onChange={(e) => {
                                 const title = e.target.value;
                                 handleTitleChange(title, item._id);
@@ -208,7 +213,9 @@ export default function Links() {
                               type="text"
                               className=" outline-none "
                               placeholder="Enter your url"
-                              value={item.linkurl}
+                              value={item.linkurl || ""}
+                              // defaultValue={item.linkurl}
+                           
                               onChange={(e) => {
                                 const url = e.target.value;
                                 handleUrlChange(url, item._id);
@@ -298,13 +305,16 @@ export default function Links() {
                             Delete this forever?
                           </p>
                           <div className="flex gap-3 ">
-                            <button className="bg-gray-200 p-2 w-1/2 rounded-lg  text-black font-semibold">
+                            <button
+                              onClick={() => handleDropDownClose(item)}
+                              className="bg-gray-200 p-2 w-1/2 rounded-lg  text-black font-semibold"
+                            >
                               cancel
                             </button>
                             <button
-                              onClick={() =>
-                                dispatch(deleteProfile({ id: item._id }))
-                              }
+                              onClick={() => {
+                                handleDelete(item);
+                              }}
                               className="p-1.5 w-1/2 rounded-lg flex gap-3 text-white items-center justify-center text-center font-semibold bg-black"
                             >
                               {loading ? (

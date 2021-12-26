@@ -15,7 +15,6 @@ export const addLink = (body) => async (dispatch) => {
       type: LOADING,
     });
     const response = await api.post(`/v1/profile/create`);
-    console.log(response);
     dispatch({
       type: ADD_LINK,
       payload: response.data.data,
@@ -31,7 +30,6 @@ export const addLink = (body) => async (dispatch) => {
 export const editLink = (body) => async (dispatch) => {
   try {
     const response = await api.post(`/v1/profile/edit`, body);
-    console.log(body);
     dispatch({
       type: EDIT_LINK,
       payload: response.data,
