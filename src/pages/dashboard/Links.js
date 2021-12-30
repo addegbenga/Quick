@@ -24,13 +24,13 @@ import { MdInsights } from "react-icons/md";
 import "./style.css";
 
 import { useState } from "react";
-import { Switch } from "@headlessui/react";
+// import { Switch } from "@headlessui/react";
 
 export default function Links() {
   const profile = useSelector((state) => state.profile.profile);
   const loading = useSelector((state) => state.profile.apiloading);
   const dispatch = useDispatch();
-  const [enableds, setEnabled] = useState(false);
+  // const [enableds, setEnabled] = useState(false);
   const [openPreview, setOpenPreview] = useState(false);
   const viewRef = useRef(null);
 
