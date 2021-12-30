@@ -24,13 +24,13 @@ import { MdInsights } from "react-icons/md";
 import "./style.css";
 
 import { useState } from "react";
-import { Switch } from "@headlessui/react";
+// import { Switch } from "@headlessui/react";
 
 export default function Links() {
   const profile = useSelector((state) => state.profile.profile);
   const loading = useSelector((state) => state.profile.apiloading);
   const dispatch = useDispatch();
-  const [enableds, setEnabled] = useState(false);
+  // const [enableds, setEnabled] = useState(false);
   const [openPreview, setOpenPreview] = useState(false);
   const viewRef = useRef(null);
 
@@ -53,22 +53,22 @@ export default function Links() {
   );
 
   // eslint-disable-next-line no-unused-vars
-  const MyToggle = (props) => (
-    <Switch
-      checked={enableds}
-      onChange={setEnabled}
-      className={`${
-        enableds ? "bg-indigo-500" : "bg-gray-200"
-      } relative inline-flex items-center h-5 rounded-full w-9`}
-    >
-      <span className="sr-only">Enable notifications</span>
-      <span
-        className={`${
-          props.enabled ? "translate-x-5" : "translate-x-1"
-        } inline-block w-3.5 h-3.5 transform bg-white rounded-full`}
-      />
-    </Switch>
-  );
+  // const MyToggle = (props) => (
+  //   <Switch
+  //     checked={enableds}
+  //     onChange={setEnabled}
+  //     className={`${
+  //       enableds ? "bg-indigo-500" : "bg-gray-200"
+  //     } relative inline-flex items-center h-5 rounded-full w-9`}
+  //   >
+  //     <span className="sr-only">Enable notifications</span>
+  //     <span
+  //       className={`${
+  //         props.enabled ? "translate-x-5" : "translate-x-1"
+  //       } inline-block w-3.5 h-3.5 transform bg-white rounded-full`}
+  //     />
+  //   </Switch>
+  // );
 
   useEffect(() => {
     dispatch(getAllLink());
