@@ -12,7 +12,7 @@ export const userReducer = (state = initialState, action) => {
     case GET_USER:
       return {
         ...state,
-        user: action.payload,
+        user: action.payload[0],
         loading: false,
         apiloading: false,
       };

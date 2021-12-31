@@ -1,4 +1,4 @@
-import { ADD_LINK, GET_LINK, GET_LINK_ERROR, LOADING } from "../actions/types";
+import { ADD_LINK, GET_LINK, GET_LINK_BY_USER_ID, GET_LINK_ERROR, LOADING } from "../actions/types";
 
 const initialState = {
   profile: null,
@@ -23,6 +23,13 @@ export const profileReducer = (state = initialState, action) => {
         loading: false,
         apiloading: false,
       };
+      case GET_LINK_BY_USER_ID:
+        return {
+          ...state,
+          profile: action.payload,
+          loading: false,
+          apiloading: false,
+        };
     case "DELETE_PROFILE":
       return {
         ...state,
