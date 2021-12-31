@@ -3,6 +3,8 @@ import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FcGoogle } from "react-icons/fc";
 import { loginUser } from "../../actions/authActions";
+import Navbar from "../../components/landing/Navbar"
+import Footer from "../../components/landing/Footer"
 import { useDispatch } from "react-redux";
 import { AiFillFacebook } from "react-icons/ai";
 import "../landing/style.css";
@@ -31,6 +33,8 @@ export default function Login() {
   }
 
   return (
+    <>
+     <Navbar />
     <div
       style={{ background: "#fafbfc" }}
       className="flex  justify-center pt-6 lg:pt-20 min-h-screen items-center  "
@@ -109,5 +113,7 @@ export default function Login() {
         </p>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
