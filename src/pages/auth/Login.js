@@ -36,7 +36,6 @@ export default function Login() {
     <>
      <Navbar />
     <div
-      style={{ background: "#fafbfc" }}
       className="flex  justify-center pt-6 lg:pt-20 min-h-screen items-center  "
     >
       <div className="inline-block w-full pt-10 max-w-xl p-6 md:px-10 py-12 my-8 overflow-hidden text-left align-middle transition-all lg:border transform bg-white lg:card-shadow rounded-2xl">
