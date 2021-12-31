@@ -20,21 +20,26 @@ export default function Home() {
     >
       <img src="/assets/screenloader.svg" alt="loading" />
     </div>
-  ) : users?.length < 1 ? (
+  ) : !users ? (
     <div>No profile found</div>
   ) : (
-  
-      <div className="bg-indigo-500 h-screen ">
-        <div className="flex items-center flex-col text-sm pt-10 ">
-          <div className="h-16 w-16 lg:h-24 lg:w-24 rounded-full bg-red-200"></div>
-          <h1 className="mt-1 lg:mt-3 lg:text-lg font-bold text-white text-opacity-90">@Drey442</h1>
-          <p className="text-white font-bold lg:text-base text-opacity-90">I am a rock star</p>
+    <div className="bg-indigo-500 h-screen ">
+      <div className="flex items-center flex-col text-sm pt-10 ">
+        <div className="h-24 w-24 lg:h-24 lg:w-24 rounded-full  bg-opacity-70">
+          <img src={users && users.avatarUrl} alt="avatar" />
         </div>
+        <h1 className="mt-3 text-lg lg:text-lg font-bold text-white text-opacity-90">
+          @Drey442
+        </h1>
+        <p className="text-white text-base font-bold lg:text-base text-opacity-90">
+          I am a rock star
+        </p>
+      </div>
 
-        {/* <div className=" w-11/12 m-auto mt-4">
-          {profile?.map((item, index) => (
+      <div className=" w-11/12 m-auto mt-4">
+        {users && users.profile.map((item, index) => (
             <div key={item._id}>
-              <div className="bg-white h-8 rounded-full text-center  flex justify-center items-center mb-3">
+              <div className="bg-white h-10 rounded-full text-center  flex justify-center items-center mb-3">
                 <a
                   href={item.linkurl}
                   target="_blank"
@@ -46,8 +51,7 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div> */}
       </div>
-
+    </div>
   );
 }
