@@ -45,12 +45,14 @@ export default function Index() {
   let element = useRoutes(routes);
 
   return loading ? (
-    ""
+    <div  style={{ background: "#fafbfc" }} className="flex justify-center items-center text-white h-screen text-4xl">
+      <img src="/assets/screenloader.svg" alt="loading"/>
+  </div>
   ) : isAuth ? (
     <Suspense
       fallback={
         <div className="flex justify-center items-center text-white h-screen text-4xl">
-          loading...
+          <img src="/assets/screenloader.svg" alt="loading"/>
         </div>
       }
     >
