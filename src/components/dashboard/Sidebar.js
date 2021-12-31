@@ -20,14 +20,14 @@ export default function Sidebar() {
           <AiOutlineAlignRight size={20} />
         </Popover.Button>
 
-        <Popover.Panel className="absolute right-0 p-5 bg-white shadow-lg rounded border  z-10">
+        <Popover.Panel className="absolute right-0 p-5 px-7 bg-white shadow-lg rounded border  z-10">
           <div className=" gap-3 flex flex-col ">
             <a href="/analytics">Analytics</a>
             <a href="/engagement">Engagement</a>
             <a href="/security">Security</a>
             <button
               onClick={handleLogOut}
-              className="bg-red-500 text-white rounded p-1"
+              className="bg-red-500 px-8 text-white rounded p-1"
             >
               Log out
             </button>
