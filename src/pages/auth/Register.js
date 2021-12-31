@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 import {registerUser} from "../../actions/authActions"
+import Navbar from "../../components/landing/Navbar"
+import Footer from "../../components/landing/Footer"
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import "../landing/style.css";
@@ -23,6 +25,8 @@ export default function Register() {
     dispatch(registerUser(form))
   };
   return (
+    <>
+    <Navbar/>
     <div className="flex justify-center pt-6 lg:pt-20 min-h-screen items-center  ">
       <div className="inline-block w-full pt-10 max-w-xl p-6 md:px-10 py-12 my-8 overflow-hidden text-left align-middle transition-all lg:border transform bg-white lg:card-shadow rounded-2xl">
         <h3 className="text-2xl tracking-tighter border-b pb-8 mb-10 border-blue-500 border-opacity-10 lg:pb-0 lg:border-0 text-textPrimaryColor lg:text-4xl text-center mb-6 font-semibold font-medium leading-6 text-gray-900">
@@ -110,5 +114,7 @@ export default function Register() {
         </p>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }

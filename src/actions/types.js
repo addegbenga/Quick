@@ -7,6 +7,9 @@ export const EDIT_LINK = "EDIT_LINK";
 export const GET_LINK = "GET_LINK";
 export const GET_LINK_ERROR = "GET_LINK_ERROR"
 
+export const GET_USER = "GET_USER"
+export const GET_USER_ERROR = "GET_USER_ERROR"
+
 export const REGISTER_USER = "REGISTER_USER";
 export const LOGIN_USER = "LOGIN_USER";
 export const GET_AUTH_USER = "GET_AUTH_USER";

@@ -12,7 +12,7 @@ export default function index() {
         <Route index element={<Home />} />
         <Route path="/*" element={<LandingPage />} />
       </Route>
-      <Route >
+      <Route>
         <Route path="dashboard/*" element={<DashBoardPages />}></Route>
       </Route>
     </Routes>

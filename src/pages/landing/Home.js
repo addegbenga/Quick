@@ -1,6 +1,8 @@
 import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Footer from "../../components/landing/Footer";
+import Navbar from "../../components/landing/Navbar";
 
 import "./style.css";
 const data = [
@@ -56,7 +58,7 @@ const data3 = [
   },
   {
     logo: "/assets/qwikkerasset16.svg",
-    title: "ECOMMERCE BRANDS –",
+    title: "ECOMMERCE BRANDS -",
     description: "How to choose the correct domain name for your business.",
     img: "/assets/qwikkerasset19.png",
     link: "Read Case Study",
@@ -66,6 +68,7 @@ export default function Home() {
   // const [loginModalOpen, setLoginModalOpen] = useState(false);
   return (
     <>
+    <Navbar/>
       {/* <Login isOpen={loginModalOpen} setIsOpen={setLoginModalOpen} /> */}
       <div
         className=" relative  flex pt-36 2xl:pt-72 items-center flex-col bg-bgPrimary  items-center"
@@ -269,6 +272,7 @@ export default function Home() {
       {/* footer section */}
       {/* <Footer /> */}
       {/* footer section */}
+      <Footer/>
     </>
   );
 }
