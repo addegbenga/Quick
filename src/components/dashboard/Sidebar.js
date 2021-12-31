@@ -1,9 +1,45 @@
 import React from "react";
 import { AiOutlineAlignRight } from "react-icons/ai";
+import { LOGOUT_USER } from "../../actions/types";
+import { useDispatch } from "react-redux";
+import { Popover } from "@headlessui/react";
+
 export default function Sidebar() {
+  const dispatch = useDispatch();
+
+  const handleLogOut = () => {
+    dispatch({ type: LOGOUT_USER });
+    localStorage.removeItem("token");
+  };
+
+  function MyPopover() {
+    return (
+      <Popover className="  lg:hidden  border ">
+        <Popover.Button>
+          {" "}
+          <AiOutlineAlignRight size={20} />
+        </Popover.Button>
+
+        <Popover.Panel className="absolute right-0 p-5 bg-white shadow-lg rounded border  z-10">
+          <div className=" gap-3 flex flex-col ">
+            <a href="/analytics">Analytics</a>
+            <a href="/engagement">Engagement</a>
+            <a href="/security">Security</a>
+            <button
+              onClick={handleLogOut}
+              className="bg-red-500 text-white rounded p-1"
+            >
+              Log out
+            </button>
+          </div>
+          <img src="/solutions.jpg" alt="" />
+        </Popover.Panel>
+      </Popover>
+    );
+  }
   return (
-    <div className="  lg:block bg-white border lg:min-h-full p-5 flex">
-      <div className="flex justify-between w-full ">
+    <div className="  lg:block bg-white border relative w-full lg:min-h-full p-3 flex">
+      <div className="flex h-full lg:flex-col items-center  justify-between w-full ">
         <svg
           width="20"
           height="20"
@@ -20,7 +56,14 @@ export default function Sidebar() {
             fill="#151522"
           />
         </svg>
-        <AiOutlineAlignRight className="lg:hidden " size={20} />
+        <button
+          onClick={handleLogOut}
+          className="hidden border text-black text-opacity-70 rounded p-2 lg:block"
+        >
+          Logout
+        </button>
+
+        <MyPopover />
       </div>
     </div>
   );

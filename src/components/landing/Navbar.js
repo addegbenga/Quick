@@ -37,11 +37,11 @@ export default function Navbar() {
         <a className="mb-4" href="#div">
           Blog
         </a>
-        <a className="mb-4" href="#div">
+        <Link to="../login" className="mb-4" href="#div">
           Sign In
-        </a>
+        </Link>
         <button className="text-white w-1/3  p-4 rounded-bl-full rounded-tl-full rounded-br-full bg-buttonPrimary text-sm">
-          Try it for free
+          <Link to="../register"> Try it for free</Link>
         </button>
       </div>
     </div>
@@ -71,10 +71,10 @@ export default function Navbar() {
           </div>
           <div className="hidden lg:block text-textPrimaryColor">
             <button className="font-semibold">
-              <Link to="login"> Sign in</Link>
+              <Link to="../login"> Sign in</Link>
             </button>
             <button className="px-6 font-semibold py-3.5 bg-white ml-6 rounded-bl-full rounded-tl-full rounded-br-full">
-              <Link to="register"> Try it for free </Link>
+              <Link to="../register"> Try it for free </Link>
             </button>
           </div>
 
