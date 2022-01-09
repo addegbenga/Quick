@@ -3,6 +3,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { FaTimes } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import "./style.css"
 
 export default function PreviewModal(props) {
   const profile = useSelector((state) => state.profile.profile);
