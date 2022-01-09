@@ -32,7 +32,7 @@ export default function Sidebar() {
               Log out
             </button>
           </div>
-          <img src="/solutions.jpg" alt="" />
+         
         </Popover.Panel>
       </Popover>
     );
