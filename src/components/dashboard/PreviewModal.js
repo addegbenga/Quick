@@ -71,7 +71,7 @@ export default function PreviewModal(props) {
                               href={item.linkurl}
                               target="_blank"
                               rel="noreferrer"
-                              className="text-sm text-black text-opacity-80"
+                              className="text-sm border-0 text-black text-opacity-80"
                             >
                               {item.title}
                             </a>
