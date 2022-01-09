@@ -14,7 +14,7 @@ export default function Sidebar() {
 
   function MyPopover() {
     return (
-      <Popover className="  lg:hidden  border ">
+      <Popover className="  lg:hidden   ">
         <Popover.Button>
           {" "}
           <AiOutlineAlignRight size={20} />
@@ -38,7 +38,7 @@ export default function Sidebar() {
     );
   }
   return (
-    <div className="  lg:block bg-white border relative w-full lg:min-h-full p-3 flex">
+    <div className="  lg:block bg-white border relative  p-3 flex">
       <div className="flex h-full lg:flex-col items-center  justify-between w-full ">
         <svg
           width="20"

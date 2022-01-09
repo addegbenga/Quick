@@ -34,7 +34,7 @@ export default function Login() {
 
   return (
     <>
-     <Navbar />
+    
     <div
       className="flex  justify-center pt-6 lg:pt-14 min-h-screen items-center  "
     >
@@ -112,7 +112,7 @@ export default function Login() {
         </p>
       </div>
     </div>
-    <Footer/>
+   
     </>
   );
 }

@@ -142,12 +142,12 @@ export default function Links() {
   return (
     <>
       <PreviewModal isOpen={openPreview} closeModal={handleModalClose} />
-      <div className="   w-full relative  ">
+      <div  className=" w-full relative   ">
         <div className="">
           <Subnavbar />
           <div
-            style={{ height: "70vh" }}
-            className=" px-4 py-4 bg-black bg-opacity-5 link-page-body lg:py-0 lg:p-8 lg:pt-14 pb-28 overflow-y-auto  "
+          
+            className=" px-4 py-4 bg-black  bg-opacity-5 link-page-body lg:py-20 lg:p-8 lg:pt-14 pb-28 overflow-y-auto  "
           >
             <div className="flex gap-2 lg:gap-4">
               <button

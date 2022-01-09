@@ -20,20 +20,36 @@ export default function Index() {
   let routes = [
     {
       path: "",
-      element: <Links />,
+      element: <Suspense  fallback={
+        <div className="flex justify-center items-center text-white h-screen text-4xl">
+          <img src="/assets/screenloader.svg" alt="loading"/>
+        </div>
+      }><Links /></Suspense>
     },
     {
       path: "appearance",
-      element: <Appearance />,
+      element: <Suspense  fallback={
+        <div className="flex justify-center items-center text-white h-screen text-4xl">
+          <img src="/assets/screenloader.svg" alt="loading"/>
+        </div>
+      }><Appearance /></Suspense> 
     },
 
     {
       path: "setting",
-      element: <Setting />,
+      element: <Suspense   fallback={
+        <div className="flex justify-center items-center text-white h-screen text-4xl">
+          <img src="/assets/screenloader.svg" alt="loading"/>
+        </div>
+      } ><Setting /></Suspense> 
     },
     {
       path: "pro",
-      element: <Pro />,
+      element: <Suspense  fallback={
+        <div className="flex justify-center items-center text-white h-screen text-4xl">
+          <img src="/assets/screenloader.svg" alt="loading"/>
+        </div>
+      } ><Pro /></Suspense> 
     },
 
     {
@@ -49,13 +65,7 @@ export default function Index() {
       <img src="/assets/screenloader.svg" alt="loading"/>
   </div>
   ) : isAuth ? (
-    <Suspense
-      fallback={
-        <div className="flex justify-center items-center text-white h-screen text-4xl">
-          <img src="/assets/screenloader.svg" alt="loading"/>
-        </div>
-      }
-    >
+ 
       <div
         style={{ background: "#fafbfc" }}
         className="w-full grid overflow-hidden   min-h-screen  relative"
@@ -73,7 +83,6 @@ export default function Index() {
           <QwikkerPanel />
         </div>
       </div>
-    </Suspense>
   ) : (
     <Navigate to="/login" replace />
   );
