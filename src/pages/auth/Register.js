@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 import {registerUser} from "../../actions/authActions"
-import Navbar from "../../components/landing/Navbar"
-import Footer from "../../components/landing/Footer"
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import "../landing/style.css";

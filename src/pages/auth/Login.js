@@ -3,8 +3,6 @@ import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FcGoogle } from "react-icons/fc";
 import { loginUser } from "../../actions/authActions";
-import Navbar from "../../components/landing/Navbar"
-import Footer from "../../components/landing/Footer"
 import { useDispatch } from "react-redux";
 import { AiFillFacebook } from "react-icons/ai";
 import "../landing/style.css";
