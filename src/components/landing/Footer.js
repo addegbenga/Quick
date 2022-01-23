@@ -7,7 +7,7 @@ export default function Footer() {
     <div className="px-6 pt-28 lg:pt-36  bg-textPrimaryColor ">
       <div className="flex items-center md:items-start  flex-col ">
         <div className="flex md:px-16 items-center flex-col border-b pb-20 lg:pb-36 border-opacity-30">
-          <h1 className="text-3xl md:text-5xl lg:text-5xl lg:px-20 text-white text-center tracking-tighter  font-bold">
+          <h1 className="text-3xl md:text-5xl lg:text-5xl lg:px-32 text-white text-center tracking-tighter  font-bold">
             Join thousands of businesses that trust weblinks to transform their
             store
           </h1>
