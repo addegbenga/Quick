@@ -7,6 +7,8 @@ import {
   LOAD_USER_ERROR,
   LOADING,
 } from "./types";
+import {  toast } from 'react-toastify';
+
 
 import { api } from "../utils/api";
 
@@ -46,7 +48,6 @@ export const loadUser = () => async (dispatch) => {
 //     });
 //   }
 // };
-
 export const loginUser = (body) => async (dispatch) => {
   try {
     dispatch({
@@ -59,10 +60,13 @@ export const loginUser = (body) => async (dispatch) => {
     });
     dispatch(loadUser());
   } catch (error) {
+   console.log(error.response.data)
     dispatch({
       type: LOGIN_ERROR,
       payload: error.response.data,
     });
+    toast.error(error.response.data)
+  
   }
 };
 
@@ -81,6 +85,7 @@ export const registerUser = (body) => async (dispatch) => {
       type: REGISTER_ERROR,
       payload: error.response.data,
     });
+    toast.error(error.response.data)
   }
 };
 

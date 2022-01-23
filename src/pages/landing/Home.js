@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/landing/Footer";
 import Navbar from "../../components/landing/Navbar";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import "./style.css";
 const data = [
   {
@@ -64,6 +67,7 @@ const data3 = [
     link: "Read Case Study",
   },
 ];
+// const notify = () => toast("Wow so easy!");
 export default function Home() {
   // const [loginModalOpen, setLoginModalOpen] = useState(false);
   return (
@@ -74,6 +78,10 @@ export default function Home() {
         className=" relative  flex pt-36 2xl:pt-72 items-center flex-col bg-bgPrimary  items-center"
         style={{ height: "100%", minHeight: "70vh" }}
       >
+      <div>
+        <button onClick={()=>toast("sjhsjh")}>Notify!</button>
+        <ToastContainer />
+      </div>
         <img
           className="absolute top-26 w-56 -left-10 "
           src="/assets/qwikkerasset17.png"

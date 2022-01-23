@@ -10,6 +10,7 @@ import {
   GET_LINK_ERROR,
 } from "./types";
 import { api } from "../utils/api";
+import {  toast } from 'react-toastify';
 
 export const addLink = (body) => async (dispatch) => {
   try {
@@ -95,5 +96,6 @@ export const deleteProfile = (body) => async (dispatch) => {
     dispatch({
       type: "DELETE_PROFILE_ERROR",
     });
+    toast.error(error.message.data)
   }
 };

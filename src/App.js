@@ -3,6 +3,8 @@ import setAuthToken from "./utils/setAuthToken";
 import store from "./store";
 import { loadUser } from "./actions/authActions";
 import { LOGOUT_USER } from "./actions/types";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import RoutesPages from "./pages/index";
 
 export default function App() {
@@ -22,6 +24,7 @@ export default function App() {
 
   return (
     <div>
+       <ToastContainer autoClose={2000} />
       <RoutesPages />
     </div>
   );

@@ -4,12 +4,12 @@ import { useSelector } from "react-redux";
 import { FcGoogle } from "react-icons/fc";
 import { loginUser } from "../../actions/authActions";
 import { useDispatch } from "react-redux";
+import 'react-toastify/dist/ReactToastify.css';
 import { AiFillFacebook } from "react-icons/ai";
 import "../landing/style.css";
 export default function Login() {
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
   const loading = useSelector((state) => state.auth.apiloading);
-
   const dispatch = useDispatch();
   const [form, setFormData] = useState({
     email: "",
@@ -23,7 +23,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(loginUser(form));
-    console.log(form);
+
   };
 
   if (isAuth) {
