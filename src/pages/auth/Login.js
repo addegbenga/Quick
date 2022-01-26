@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
 import { loginUser } from "../../actions/authActions";
 import { useDispatch } from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
-import { AiFillFacebook } from "react-icons/ai";
+// import { AiFillFacebook } from "react-icons/ai";
 import "../landing/style.css";
 export default function Login() {
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
@@ -41,7 +41,7 @@ export default function Login() {
           Login to your Account
         </h3>
 
-        <div className="grid grid-cols-2 gap-5 lg:gap-10">
+        {/* <div className="grid grid-cols-2 gap-5 lg:gap-10">
           <button
             style={{ background: "#fef0dd" }}
             className=" flex p-4 rounded-lg text-textPrimaryColor justify-center   font-medium"
@@ -59,7 +59,7 @@ export default function Login() {
         </div>
         <p className="text-center text-textPrimaryColor text-opacity-80 text-lg my-2 lg:my-5">
           or
-        </p>
+        </p> */}
         <div>
           <form onSubmit={handleSubmit} className="grid grid-cols gap-3  ">
             <input

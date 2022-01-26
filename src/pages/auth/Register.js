@@ -31,7 +31,7 @@ export default function Register() {
           Create your Account
         </h3>
 
-        <div className="grid grid-cols-2 gap-5 lg:gap-10">
+        {/* <div className="grid grid-cols-2 gap-5 lg:gap-10">
           <button
             style={{ background: "#fef0dd" }}
             className=" flex p-4 rounded-lg text-textPrimaryColor justify-center   font-medium"
@@ -49,7 +49,7 @@ export default function Register() {
         </div>
         <p className="text-center text-textPrimaryColor text-sm text-opacity-80 text-lg my-4 lg:my-5">
           Dont have an account?
-        </p>
+        </p> */}
         <div>
           <form onSubmit={handleSubmit} className="grid grid-cols gap-3 ">
             <input
