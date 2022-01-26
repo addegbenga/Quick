@@ -38,10 +38,10 @@ export const editLink = (body) => async (dispatch) => {
       payload: response.data,
     });
     if(body.published === true){
-      toast.success("Link Published Successfully")
+      toast.success("Link Public")
     }
     if(body.published === false){
-      toast.success("Link UnPublished Successfully")
+      toast.success("Link Private")
     }
     
   } catch (error) {
