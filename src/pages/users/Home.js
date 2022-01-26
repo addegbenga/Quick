@@ -29,10 +29,10 @@ export default function Home() {
           <img src={users && users.avatarUrl} alt="avatar" />
         </div>
         <h1 className="mt-3 text-lg lg:text-lg font-bold text-white text-opacity-90">
-          @Drey442
+         {users && users.username}
         </h1>
-        <p className="text-white text-base font-bold lg:text-base text-opacity-90">
-          I am a rock star
+        <p className="text-white text-base  lg:text-base text-opacity-90">
+         {users && users.bio}
         </p>
       </div>
 

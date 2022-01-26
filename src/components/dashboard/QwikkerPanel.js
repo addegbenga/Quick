@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 export default function QwikkerPanel() {
   const profile = useSelector((state) => state.profile.profile);
+  const user = useSelector(state => state.auth.user)
   return (
     <div className=" w-1/2 hidden lg:block border-l h-screen overflow-hidden  ">
       {/* <div className="h-16 flex items-center justify-between px-6 border-b  bg-white ">
@@ -22,9 +23,11 @@ export default function QwikkerPanel() {
         className="bg-indigo-500 w-56 border-8 border-black m-auto mt-20 scrollbar overflow-y-auto "
       >
         <div className="flex items-center flex-col text-sm mt-8">
-          <div className="h-16 w-16 rounded-full bg-red-200"></div>
-          <h1 className="mt-1 text-white text-opacity-90">@Drey442</h1>
-          <p className="text-white text-opacity-90">I am a rock star</p>
+          <div className="h-16 w-16 rounded-full ">
+          <img src={user.avatarUrl} alt="avatar" />
+          </div>
+          <h1 className="mt-1 text-white font-bold text-opacity-90">{user.username}</h1>
+          <p className="text-white text-opacity-90">{user.bio}</p>
         </div>
 
         <div className=" w-11/12 m-auto mt-4">
@@ -43,8 +46,6 @@ export default function QwikkerPanel() {
           </div>
           : null
           )}
-
-        {/* {console.log(profile?.filter(item => item.published ? item : "null"))} */}
         </div>
       </div>
     </div>

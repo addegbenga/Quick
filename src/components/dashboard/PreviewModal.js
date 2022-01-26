@@ -7,6 +7,7 @@ import "./style.css"
 
 export default function PreviewModal(props) {
   const profile = useSelector((state) => state.profile.profile);
+  const user = useSelector(state => state.auth.user)
   return (
     <>
       <Transition appear show={props.isOpen} as={Fragment}>
@@ -55,17 +56,19 @@ export default function PreviewModal(props) {
                     className="bg-indigo-500 relative scrollbar overflow-y-auto   border-black  "
                   >
                     <div className="flex items-center flex-col text-sm mt-12">
-                      <div className="h-24 w-24 rounded-full bg-red-200"></div>
-                      <h1 className="mt-3 font-semibold text-white text-lg text-opacity-90">
-                        @Drey442
+                      <div className="h-24 w-24 rounded-full ">
+                      <img src={user.avatarUrl} alt="avatar" />
+                      </div>
+                      <h1 className="mt-3 font-bold text-white text-lg text-opacity-90">
+                        {user.username}
                       </h1>
-                      <p className="text-white text-base text-opacity-90">
-                        I am a rock star
+                      <p className="text-white text-base font-medium text-opacity-90">
+                        {user.bio}
                       </p>
                     </div>
 
                     <div className=" w-11/12 m-auto mt-6">
-                      {profile?.map((item, index) => (
+                    {profile?.map(item => item.published ? 
                         <div key={item._id}>
                           <div className="bg-white rounded-full text-center p-5 mb-3">
                             <a
@@ -78,7 +81,7 @@ export default function PreviewModal(props) {
                             </a>
                           </div>
                         </div>
-                      ))}
+                      :null)}
                     </div>
                     <div className="absolute bottom-6 flex items-center   w-full  justify-center">
                       <button
