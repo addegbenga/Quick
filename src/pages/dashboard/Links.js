@@ -51,6 +51,14 @@ export default function Links() {
     1000
     // { maxWait: 2000 }
   );
+  const deboucePublished = useDebouncedCallback(
+    (published, id) => {
+      dispatch(editLink({ published: published, linkId: id }));
+      dispatch(getAllLink());
+    },
+    1000
+    // { maxWait: 2000 }
+  );
 
   // eslint-disable-next-line no-unused-vars
   // const MyToggle = (props) => (
@@ -198,15 +206,10 @@ export default function Links() {
                           </div>
 
                           <input
-                            value={item.enabled}
+                            value={item.published}
                             onChange={(e) => {
                               const enabled = e.target.checked;
-                              console.log(enabled);
-                              setMyForms((current) =>     
-                                current.map((x) =>
-                                  x.id === item.id ? { ...x, enabled } : x
-                                )
-                              );
+                              deboucePublished(enabled,item._id)
                             }}
                             type="checkbox"
                           />

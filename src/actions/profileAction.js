@@ -37,6 +37,13 @@ export const editLink = (body) => async (dispatch) => {
       type: EDIT_LINK,
       payload: response.data,
     });
+    if(body.published === true){
+      toast.success("Link Published Successfully")
+    }
+    if(body.published === false){
+      toast.success("Link UnPublished Successfully")
+    }
+    
   } catch (error) {
     dispatch({
       type: EDIT_LINK_ERROR,

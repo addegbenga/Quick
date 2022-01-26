@@ -28,20 +28,23 @@ export default function QwikkerPanel() {
         </div>
 
         <div className=" w-11/12 m-auto mt-4">
-          {profile?.map((item, index) => (
+          {profile?.map(item => item.published ? 
             <div key={item._id}>
-              <div className="bg-white h-8 rounded-full text-center  flex justify-center items-center mb-3">
-                <a
-                  href={item.linkurl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm text-black text-opacity-80"
-                >
-                  {item.title}
-                </a>
-              </div>
+            <div className="bg-white h-8 rounded-full text-center  flex justify-center items-center mb-3">
+              <a
+                href={item.linkurl}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm text-black text-opacity-80"
+              >
+                {item.title}
+              </a>
             </div>
-          ))}
+          </div>
+          : null
+          )}
+
+        {/* {console.log(profile?.filter(item => item.published ? item : "null"))} */}
         </div>
       </div>
     </div>

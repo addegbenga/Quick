@@ -37,7 +37,8 @@ export default function Home() {
       </div>
 
       <div className=" w-11/12 m-auto mt-4">
-        {users && users.profile.map((item, index) => (
+      {users && users.profile.map(item => item.published ? 
+        // {users && users.profile.map((item, index) => (
             <div key={item._id}>
               <div className="bg-white h-10 rounded-full text-center  flex justify-center items-center mb-3">
                 <a
@@ -50,7 +51,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-          ))}
+          :null)}
       </div>
     </div>
   );
