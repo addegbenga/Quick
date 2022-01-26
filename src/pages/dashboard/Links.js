@@ -142,12 +142,12 @@ export default function Links() {
   return (
     <>
       <PreviewModal isOpen={openPreview} closeModal={handleModalClose} />
-      <div  className=" w-full relative   ">
+      <div  className=" w-full relative  ">
         <div className="">
           <Subnavbar />
           <div
           
-            className=" px-4 py-4 bg-black  bg-opacity-5 link-page-body lg:py-20 lg:p-8 lg:pt-14 pb-28 overflow-y-auto  "
+            className=" px-4 py-4 bg-black  bg-opacity-5 min-h-screen link-page-body lg:py-20 lg:p-8 lg:pt-14 pb-28 overflow-y-auto  "
           >
             <div className="flex gap-2 lg:gap-4">
               <button
@@ -172,6 +172,10 @@ export default function Links() {
             </div>
 
             <div className="mt-10   rounded-lg">
+            {myForms && myForms.length === 0 ? <div className="text-xl text-center flex flex-col items-center"><p className="text-black text-opacity-60 py-6">You have not added any link.</p>
+            
+            <img className="w-64" src="/assets/empty.svg" alt="empty"/>
+            </div>:null}
               <div ref={viewRef}>
                 {myForms?.map((item, index) => (
                   <div key={index}>
@@ -198,7 +202,7 @@ export default function Links() {
                             onChange={(e) => {
                               const enabled = e.target.checked;
                               console.log(enabled);
-                              setMyForms((current) =>
+                              setMyForms((current) =>     
                                 current.map((x) =>
                                   x.id === item.id ? { ...x, enabled } : x
                                 )
@@ -347,7 +351,8 @@ export default function Links() {
               preview
             </button>
           )}
-        </div>
+          </div>
+      
       </div>
     </>
   );
