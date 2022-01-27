@@ -211,6 +211,7 @@ export default function Links() {
                               const enabled = e.target.checked;
                               deboucePublished(enabled,item._id)
                             }}
+                            checked = {item.published ? true : false}
                             type="checkbox"
                           />
                         </div>
