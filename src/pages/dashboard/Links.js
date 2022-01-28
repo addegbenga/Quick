@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Subnavbar from "../../components/dashboard/Subnavbar";
+import * as Yup from 'yup';
 import { useDispatch, useSelector } from "react-redux";
 import {
   addLink,
@@ -24,6 +25,7 @@ import { MdInsights } from "react-icons/md";
 import "./style.css";
 
 import { useState } from "react";
+import { toast } from "react-toastify";
 // import { Switch } from "@headlessui/react";
 
 export default function Links() {
@@ -33,6 +35,8 @@ export default function Links() {
   // const [enableds, setEnabled] = useState(false);
   const [openPreview, setOpenPreview] = useState(false);
   const viewRef = useRef(null);
+
+
 
   const [myForms, setMyForms] = useState(profile);
   const debouceTitle = useDebouncedCallback(
@@ -52,9 +56,35 @@ export default function Links() {
     // { maxWait: 2000 }
   );
   const deboucePublished = useDebouncedCallback(
-    (published, id) => {
-      dispatch(editLink({ published: published, linkId: id }));
-      dispatch(getAllLink());
+    (published, id, item) => {
+     
+      const URL = /^((ftp|http|https):\/\/)?(www.)?(?!.*(ftp|http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+((\/)[\w#]+)*(\/\w+\?[a-zA-Z0-9_]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?$/gm
+      let schema = Yup.object().shape({
+        name: Yup.string().matches(URL).required(),
+        title:Yup.string().required()
+       
+      });
+      schema
+  .isValid({
+    name: item.linkurl,
+    title:item.title
+    
+  })
+  .then(function (valid) {
+   if(!valid){
+     return toast.warn("Enter valid link/title")
+   }
+   dispatch(editLink({ published: published, linkId: id }));
+   dispatch(getAllLink());
+  });
+
+      
+     
+      // if(item.title === "me"){
+        
+      //  return toast.error("not working",test)
+      // }
+     
     },
     1000
     // { maxWait: 2000 }
@@ -196,6 +226,7 @@ export default function Links() {
                             
                               onChange={(e) => {
                                 const title = e.target.value;
+                                
                                 handleTitleChange(title, item._id);
                                 debouceTitle(title, item._id);
                               }}
@@ -209,7 +240,7 @@ export default function Links() {
                             value={item.published}
                             onChange={(e) => {
                               const enabled = e.target.checked;
-                              deboucePublished(enabled,item._id)
+                              deboucePublished(enabled,item._id, item)
                             }}
                             checked = {item.published ? true : false}
                             type="checkbox"
@@ -220,7 +251,7 @@ export default function Links() {
                             <input
                               type="text"
                               className=" outline-none "
-                              placeholder="Enter your url"
+                              placeholder="Enter a valid url"
                               value={item.linkurl || ""}
                               // defaultValue={item.linkurl}
                            
