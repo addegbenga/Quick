@@ -37,22 +37,30 @@ export default function Links() {
   const viewRef = useRef(null);
 
   const [myForms, setMyForms] = useState(profile);
-  const debouceTitle = useDebouncedCallback(
-    (title, id) => {
-      dispatch(editLink({ title: title, linkId: id }));
-      dispatch(getAllLink());
-    },
-    300
-    // { maxWait: 2000 }
-  );
-  const debouceUrl = useDebouncedCallback(
-    (linkurl, id) => {
-      dispatch(editLink({ linkurl: linkurl, linkId: id }));
-      dispatch(getAllLink());
-    },
-    300
-    // { maxWait: 2000 }
-  );
+  // const debouceTitle = useDebouncedCallback(
+  //   (title, id) => {
+  //     dispatch(editLink({ title: title, linkId: id }));
+  //     dispatch(getAllLink());
+  //   },
+  //   300
+  //   // { maxWait: 2000 }
+  // );
+  // const debouceUrl = useDebouncedCallback(
+  //   (linkurl, id) => {
+  //     dispatch(editLink({ linkurl: linkurl, linkId: id }));
+  //     dispatch(getAllLink());
+  //   },
+  //   300
+  //   // { maxWait: 2000 }
+  // );
+  const debouceUrl = (linkurl, id) => {
+    dispatch(editLink({ linkurl: linkurl, linkId: id }));
+    dispatch(getAllLink());
+  };
+  const debouceTitle = (title, id) => {
+    dispatch(editLink({ title: title, linkId: id }));
+    dispatch(getAllLink());
+  };
   const deboucePublished = useDebouncedCallback(
     (published, id, item) => {
       const URL =
