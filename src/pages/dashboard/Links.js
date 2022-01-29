@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Subnavbar from "../../components/dashboard/Subnavbar";
-import * as Yup from 'yup';
+import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addLink,
@@ -36,15 +36,13 @@ export default function Links() {
   const [openPreview, setOpenPreview] = useState(false);
   const viewRef = useRef(null);
 
-
-
   const [myForms, setMyForms] = useState(profile);
   const debouceTitle = useDebouncedCallback(
     (title, id) => {
       dispatch(editLink({ title: title, linkId: id }));
       dispatch(getAllLink());
     },
-    1000
+    300
     // { maxWait: 2000 }
   );
   const debouceUrl = useDebouncedCallback(
@@ -52,39 +50,34 @@ export default function Links() {
       dispatch(editLink({ linkurl: linkurl, linkId: id }));
       dispatch(getAllLink());
     },
-    1000
+    300
     // { maxWait: 2000 }
   );
   const deboucePublished = useDebouncedCallback(
     (published, id, item) => {
-     
-      const URL = /^((ftp|http|https):\/\/)?(www.)?(?!.*(ftp|http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+((\/)[\w#]+)*(\/\w+\?[a-zA-Z0-9_]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?$/gm
+      const URL =
+        /^((ftp|http|https):\/\/)?(www.)?(?!.*(ftp|http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+((\/)[\w#]+)*(\/\w+\?[a-zA-Z0-9_]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?$/gm;
       let schema = Yup.object().shape({
         name: Yup.string().matches(URL).required(),
-        title:Yup.string().required()
-       
+        title: Yup.string().required(),
       });
       schema
-  .isValid({
-    name: item.linkurl,
-    title:item.title
-    
-  })
-  .then(function (valid) {
-   if(!valid){
-     return toast.warn("Enter valid link/title")
-   }
-   dispatch(editLink({ published: published, linkId: id }));
-   dispatch(getAllLink());
-  });
+        .isValid({
+          name: item.linkurl,
+          title: item.title,
+        })
+        .then(function (valid) {
+          if (!valid) {
+            return toast.error("Enter valid link/title");
+          }
+          dispatch(editLink({ published: published, linkId: id }));
+          dispatch(getAllLink());
+        });
 
-      
-     
       // if(item.title === "me"){
-        
+
       //  return toast.error("not working",test)
       // }
-     
     },
     1000
     // { maxWait: 2000 }
@@ -180,13 +173,10 @@ export default function Links() {
   return (
     <>
       <PreviewModal isOpen={openPreview} closeModal={handleModalClose} />
-      <div  className=" w-full relative  ">
+      <div className=" w-full relative  ">
         <div className="">
           <Subnavbar />
-          <div
-          
-            className=" px-4 py-4 bg-black  bg-opacity-5 min-h-screen link-page-body lg:py-20 lg:p-8 lg:pt-14 pb-28 overflow-y-auto  "
-          >
+          <div className=" px-4 py-4 bg-black  bg-opacity-5 min-h-screen link-page-body lg:py-20 lg:p-8 lg:pt-14 pb-28 overflow-y-auto  ">
             <div className="flex gap-2 lg:gap-4">
               <button
                 onClick={() => handleAddNewLinkForm()}
@@ -210,10 +200,15 @@ export default function Links() {
             </div>
 
             <div className="mt-10   rounded-lg">
-            {myForms && myForms.length === 0 ? <div className="text-xl text-center flex flex-col items-center"><p className="text-black text-opacity-60 py-6">You have not added any link.</p>
-            
-            <img className="w-64" src="/assets/empty.svg" alt="empty"/>
-            </div>:null}
+              {myForms && myForms.length === 0 ? (
+                <div className="text-xl text-center flex flex-col items-center">
+                  <p className="text-black text-opacity-60 py-6">
+                    You have not added any link.
+                  </p>
+
+                  <img className="w-64" src="/assets/empty.svg" alt="empty" />
+                </div>
+              ) : null}
               <div ref={viewRef}>
                 {myForms?.map((item, index) => (
                   <div key={index}>
@@ -223,11 +218,12 @@ export default function Links() {
                           <div className="flex text-black text-opacity-100 items-center relative group ">
                             <input
                               value={item.title || ""}
-                            
                               onChange={(e) => {
                                 const title = e.target.value;
-                                
                                 handleTitleChange(title, item._id);
+                              }}
+                              onBlur={(e) => {
+                                const title = e.target.value;
                                 debouceTitle(title, item._id);
                               }}
                               className=" outline-none font-semibold text-opacity-80 text-black "
@@ -240,9 +236,9 @@ export default function Links() {
                             value={item.published}
                             onChange={(e) => {
                               const enabled = e.target.checked;
-                              deboucePublished(enabled,item._id, item)
+                              deboucePublished(enabled, item._id, item);
                             }}
-                            checked = {item.published ? true : false}
+                            checked={item.published ? true : false}
                             type="checkbox"
                           />
                         </div>
@@ -254,10 +250,13 @@ export default function Links() {
                               placeholder="Enter a valid url"
                               value={item.linkurl || ""}
                               // defaultValue={item.linkurl}
-                           
+
                               onChange={(e) => {
                                 const url = e.target.value;
                                 handleUrlChange(url, item._id);
+                              }}
+                              onBlur={(e) => {
+                                const url = e.target.value;
                                 debouceUrl(url, item._id);
                               }}
                             />
@@ -386,8 +385,7 @@ export default function Links() {
               preview
             </button>
           )}
-          </div>
-      
+        </div>
       </div>
     </>
   );
