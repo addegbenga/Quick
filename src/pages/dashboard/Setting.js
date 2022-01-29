@@ -1,9 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function Setting() {
-    return (
-        <div>
-            Setings
-        </div>
-    )
+  return <div className="text-center font-bold text-4xl p-10">Coming soon</div>;
 }

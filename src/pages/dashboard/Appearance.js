@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 export default function Appearance() {
-    return (
-        <div>
-            Appearance
-        </div>
-    )
+  return (
+    <div className="text-center font-bold text-4xl p-10">Coming Soon.</div>
+  );
 }
