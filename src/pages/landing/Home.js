@@ -3,7 +3,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Footer from "../../components/landing/Footer";
 import Navbar from "../../components/landing/Navbar";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 import "./style.css";
 const data = [
@@ -69,7 +69,7 @@ export default function Home() {
   // const [loginModalOpen, setLoginModalOpen] = useState(false);
   return (
     <>
-    <Navbar/>
+      <Navbar />
       {/* <Login isOpen={loginModalOpen} setIsOpen={setLoginModalOpen} /> */}
       <div
         className=" relative  flex pt-36 lg:pt-48 2xl:pt-80 items-center flex-col bg-bgPrimary  items-center"
@@ -84,7 +84,7 @@ export default function Home() {
           style={{ letterSpacing: "-0.2rem" }}
           className=" text-customHeaderFontMobile md:text-5xl lg:text-7xl 2xl:text-8xl 2xl:w-3/4 2xl:leading-12 lg:px-20 xl:px-64 md:px-10 leading-10  relative z-20 text-textPrimaryColor font-black text-center"
         >
-          The modern retail platform for fast-moving brands.
+          Modern platform to have your social links.
         </h1>
 
         <button className="text-white 2xl:text-lg relative z-20 bg-buttonPrimary text-base font-semibold tracking-tight rounded-bl-full rounded-tl-full rounded-br-full xl:px-14 2xl:px-20 xl:py-6  mt-8 2xl:mt-8 px-12 md:py-5 py-6">
@@ -107,7 +107,10 @@ export default function Home() {
         </div>
       </div>
       {/* second section */}
-      <div style={{background:"#fafbfc"}} className="pt-40 md:pt-64 lg:pt-96 md:px-32 lg:px-0  ">
+      <div
+        style={{ background: "#fafbfc" }}
+        className="pt-40 md:pt-64 lg:pt-96 md:px-32 lg:px-0  "
+      >
         <h1
           style={{ letterSpacing: "-0.2rem" }}
           className="px-5 text-center text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-textPrimaryColor font-semibold"
@@ -273,7 +276,7 @@ export default function Home() {
       {/* footer section */}
       {/* <Footer /> */}
       {/* footer section */}
-      <Footer/>
+      <Footer />
     </>
   );
 }

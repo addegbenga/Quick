@@ -14,6 +14,7 @@ import PreviewModal from "../../components/dashboard/PreviewModal";
 import { IoEyeSharp } from "react-icons/io5";
 import { VscTrash } from "react-icons/vsc";
 import { useDebouncedCallback } from "use-debounce";
+import MyModal from "../../utils/uploadModal";
 import {
   // AiOutlineNodeIndex,
   AiOutlineAppstoreAdd,
@@ -34,25 +35,11 @@ export default function Links() {
   const dispatch = useDispatch();
   // const [enableds, setEnabled] = useState(false);
   const [openPreview, setOpenPreview] = useState(false);
+  const [openUploadModal, setOpenUploadModal] = useState(false);
   const viewRef = useRef(null);
 
   const [myForms, setMyForms] = useState(profile);
-  // const debouceTitle = useDebouncedCallback(
-  //   (title, id) => {
-  //     dispatch(editLink({ title: title, linkId: id }));
-  //     dispatch(getAllLink());
-  //   },
-  //   300
-  //   // { maxWait: 2000 }
-  // );
-  // const debouceUrl = useDebouncedCallback(
-  //   (linkurl, id) => {
-  //     dispatch(editLink({ linkurl: linkurl, linkId: id }));
-  //     dispatch(getAllLink());
-  //   },
-  //   300
-  //   // { maxWait: 2000 }
-  // );
+
   const debouceUrl = (linkurl, id) => {
     dispatch(editLink({ linkurl: linkurl, linkId: id }));
     dispatch(getAllLink());
@@ -81,34 +68,10 @@ export default function Links() {
           dispatch(editLink({ published: published, linkId: id }));
           dispatch(getAllLink());
         });
-
-      // if(item.title === "me"){
-
-      //  return toast.error("not working",test)
-      // }
     },
     1000
     // { maxWait: 2000 }
   );
-
-  // eslint-disable-next-line no-unused-vars
-  // const MyToggle = (props) => (
-  //   <Switch
-  //     checked={enableds}
-  //     onChange={setEnabled}
-  //     className={`${
-  //       enableds ? "bg-indigo-500" : "bg-gray-200"
-  //     } relative inline-flex items-center h-5 rounded-full w-9`}
-  //   >
-  //     <span className="sr-only">Enable notifications</span>
-  //     <span
-  //       className={`${
-  //         props.enabled ? "translate-x-5" : "translate-x-1"
-  //       } inline-block w-3.5 h-3.5 transform bg-white rounded-full`}
-  //     />
-  //   </Switch>
-  // );
-
   useEffect(() => {
     dispatch(getAllLink());
   }, [dispatch]);
@@ -154,13 +117,6 @@ export default function Links() {
 
   const handleAddNewLinkForm = () => {
     dispatch(addLink());
-    // if (!loading) {
-    //   viewRef.current.scrollIntoView({
-    //     behavior: "smooth",
-    //     block: "end",
-    //     inline: "nearest",
-    //   });
-    // }
   };
 
   const handleDelete = (item) => {
@@ -180,6 +136,7 @@ export default function Links() {
 
   return (
     <>
+      <MyModal isOpen={openUploadModal} setIsOpen={setOpenUploadModal} />
       <PreviewModal isOpen={openPreview} closeModal={handleModalClose} />
       <div className=" w-full relative  ">
         <div className="">
@@ -255,7 +212,7 @@ export default function Links() {
                             <input
                               type="text"
                               className=" outline-none "
-                              placeholder="Enter a valid url"
+                              placeholder="https://yourwebsite"
                               value={item.linkurl || ""}
                               // defaultValue={item.linkurl}
 
@@ -328,7 +285,10 @@ export default function Links() {
                           <p className="py-3 text-sm">
                             Add a Thumbnail or icon to this Link.
                           </p>
-                          <button className="bg-indigo-500 p-2 rounded-lg w-full text-white font-semibold">
+                          <button
+                            onClick={() => setOpenUploadModal(true)}
+                            className="bg-indigo-500 p-2 rounded-lg w-full text-white font-semibold"
+                          >
                             Set Thumbnail
                           </button>
                         </div>
