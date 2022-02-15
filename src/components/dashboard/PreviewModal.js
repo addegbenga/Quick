@@ -1,13 +1,13 @@
 import React from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaLock } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import "./style.css"
+import "./style.css";
 
 export default function PreviewModal(props) {
   const profile = useSelector((state) => state.profile.profile);
-  const user = useSelector(state => state.auth.user)
+  const user = useSelector((state) => state.auth.user);
   return (
     <>
       <Transition appear show={props.isOpen} as={Fragment}>
@@ -53,11 +53,11 @@ export default function PreviewModal(props) {
                       height: "100vh",
                       borderWidth: "1.3rem",
                     }}
-                    className="bg-indigo-500 relative scrollbar overflow-y-auto   border-black  "
+                    className="bg-indigo-700 relative scrollbar overflow-y-auto   border-black  "
                   >
                     <div className="flex items-center flex-col text-sm mt-12">
                       <div className="h-24 w-24 rounded-full ">
-                      <img src={user.avatarUrl} alt="avatar" />
+                        <img src={user.avatarUrl} alt="avatar" />
                       </div>
                       <h1 className="mt-3 font-bold text-white text-lg text-opacity-90">
                         {user.username}
@@ -68,20 +68,32 @@ export default function PreviewModal(props) {
                     </div>
 
                     <div className=" w-11/12 m-auto mt-6">
-                    {profile?.map(item => item.published ? 
-                        <div key={item._id}>
-                          <div className="bg-white rounded-full text-center p-5 mb-3">
-                            <a
-                              href={item.linkurl}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="text-sm border-0 text-black text-opacity-80"
-                            >
-                              {item.title}
-                            </a>
+                      {profile?.map((item) =>
+                        item.published ? (
+                          <div key={item._id}>
+                            <div className="bg-white overflow-y-hidden h-14 rounded-full text-center px-3  flex justify-between items-center mb-3">
+                              {item.linkAvatar ? (
+                                <img
+                                  className="h-7 w-7 rounded"
+                                  src={item.linkAvatar}
+                                  alt="icn"
+                                />
+                              ) : (
+                                <div className="h-5 w-5"></div>
+                              )}
+                              <a
+                                href={item.linkurl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className=" text-black text-opacity-80"
+                              >
+                                {item.title}
+                              </a>
+                              <FaLock size={14} />
+                            </div>
                           </div>
-                        </div>
-                      :null)}
+                        ) : null
+                      )}
                     </div>
                     <div className="absolute bottom-6 flex items-center   w-full  justify-center">
                       <button

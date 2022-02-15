@@ -10,7 +10,7 @@ import {
   GET_LINK_ERROR,
 } from "./types";
 import { api } from "../utils/api";
-import {  toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export const addLink = (body) => async (dispatch) => {
   try {
@@ -32,18 +32,22 @@ export const addLink = (body) => async (dispatch) => {
 
 export const editLink = (body) => async (dispatch) => {
   try {
+    dispatch({
+      type: LOADING,
+    });
     const response = await api.post(`/v1/profile/edit`, body);
+
     dispatch({
       type: EDIT_LINK,
       payload: response.data,
     });
-    if(body.published === true){
-      toast.success("Link Public")
+
+    if (body.published === true) {
+      toast.success("Link Public");
     }
-    if(body.published === false){
-      toast.success("Link Private")
+    if (body.published === false) {
+      toast.success("Link Private");
     }
-    
   } catch (error) {
     dispatch({
       type: EDIT_LINK_ERROR,
@@ -103,6 +107,6 @@ export const deleteProfile = (body) => async (dispatch) => {
     dispatch({
       type: "DELETE_PROFILE_ERROR",
     });
-    toast.error(error.message.data)
+    toast.error(error.message.data);
   }
 };

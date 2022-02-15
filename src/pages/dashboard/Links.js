@@ -37,8 +37,8 @@ export default function Links() {
   const [openPreview, setOpenPreview] = useState(false);
   const [openUploadModal, setOpenUploadModal] = useState(false);
   const viewRef = useRef(null);
-
   const [myForms, setMyForms] = useState(profile);
+  const [currentLinkId, setCurrentLinkId] = useState();
 
   const debouceUrl = (linkurl, id) => {
     dispatch(editLink({ linkurl: linkurl, linkId: id }));
@@ -72,6 +72,7 @@ export default function Links() {
     1000
     // { maxWait: 2000 }
   );
+
   useEffect(() => {
     dispatch(getAllLink());
   }, [dispatch]);
@@ -136,7 +137,13 @@ export default function Links() {
 
   return (
     <>
-      <MyModal isOpen={openUploadModal} setIsOpen={setOpenUploadModal} />
+      <MyModal
+        setMyForms={setMyForms}
+        // itemId={item}
+        itemId={currentLinkId}
+        isOpen={openUploadModal}
+        setIsOpen={setOpenUploadModal}
+      />
       <PreviewModal isOpen={openPreview} closeModal={handleModalClose} />
       <div className=" w-full relative  ">
         <div className="">
@@ -176,7 +183,7 @@ export default function Links() {
               ) : null}
               <div ref={viewRef}>
                 {myForms?.map((item, index) => (
-                  <div key={index}>
+                  <div key={item._id}>
                     <div className="mb-3 shadow-lg bg-white flex w-full rounded border bg-white">
                       <div className="w-full  p-4 pb-7">
                         <div className="flex items-center justify-between mb-2">
@@ -267,7 +274,7 @@ export default function Links() {
                       </div>
                     </div>
 
-                    {item.enabled ? (
+                    {item.enabled && item.linkAvatar ? (
                       <div className="mb-6">
                         <div className="py-1 justify-center items-center relative flex">
                           <h1 className="text-center  font-bold ">
@@ -281,19 +288,66 @@ export default function Links() {
                           </button>
                         </div>
 
-                        <div className="bg-white shadow-lg rounded-lg pb-5  px-3 text-center">
-                          <p className="py-3 text-sm">
-                            Add a Thumbnail or icon to this Link.
-                          </p>
-                          <button
-                            onClick={() => setOpenUploadModal(true)}
-                            className="bg-indigo-500 p-2 rounded-lg w-full text-white font-semibold"
-                          >
-                            Set Thumbnail
-                          </button>
+                        <div className="bg-white gap-3 flex items-center justify-between shadow-lg rounded-lg py-4  px-3 text-center">
+                          <img
+                            className="h-20 border w-20"
+                            src={item.linkAvatar}
+                            alt="avt"
+                          />
+                          <div className="flex flex-col gap-2 w-full">
+                            <button
+                              onClick={() => {
+                                setOpenUploadModal(true);
+                                setCurrentLinkId(item._id);
+                              }}
+                              className="bg-indigo-500 text-white rounded-md p-2"
+                            >
+                              Change
+                            </button>
+                            <button
+                              onClick={() => {
+                                setOpenUploadModal(false);
+                                setCurrentLinkId(item._id);
+                              }}
+                              className="bg-gray-200 rounded-md p-2"
+                            >
+                              Remove
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    ) : null}
+                    ) : (
+                      item.enabled && (
+                        <div className="mb-6">
+                          <div className="py-1 justify-center items-center relative flex">
+                            <h1 className="text-center  font-bold ">
+                              Add Thumbnail
+                            </h1>
+                            <button
+                              className="absolute right-0"
+                              onClick={() => handleDropDownClose(item)}
+                            >
+                              <AiOutlineClose size={20} />
+                            </button>
+                          </div>
+
+                          <div className="bg-white shadow-lg rounded-lg pb-5  px-3 text-center">
+                            <p className="py-3 text-sm">
+                              Add a Thumbnail or icon to this Link.
+                            </p>
+                            <button
+                              onClick={() => {
+                                setOpenUploadModal(true);
+                                setCurrentLinkId(item._id);
+                              }}
+                              className="bg-indigo-500 p-2 rounded-lg w-full text-white font-semibold"
+                            >
+                              Set Thumbnail
+                            </button>
+                          </div>
+                        </div>
+                      )
+                    )}
                     {item.deleteDrop ? (
                       <div className="mb-6">
                         <div className="py-1 justify-center items-center relative flex">
