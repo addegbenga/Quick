@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import { useRoutes } from "react-router-dom";
+import { ImSpinner9 } from "react-icons/im";
 import NotFound from "./NotFound";
 import Navbar from "../../components/dashboard/Navbar";
 import QwikkerPanel from "../../components/dashboard/QwikkerPanel";
@@ -20,36 +21,60 @@ export default function Index() {
   let routes = [
     {
       path: "",
-      element: <Suspense  fallback={
-        <div className="flex justify-center items-center text-white h-screen text-4xl">
-          <img src="/assets/screenloader.svg" alt="loading"/>
-        </div>
-      }><Links /></Suspense>
+      element: (
+        <Suspense
+          fallback={
+            <div className="flex justify-center items-center text-white h-screen text-4xl">
+              <ImSpinner9 size={30} className="animate-spin" />
+            </div>
+          }
+        >
+          <Links />
+        </Suspense>
+      ),
     },
     {
       path: "appearance",
-      element: <Suspense  fallback={
-        <div className="flex justify-center items-center text-white h-screen text-4xl">
-          <img src="/assets/screenloader.svg" alt="loading"/>
-        </div>
-      }><Appearance /></Suspense> 
+      element: (
+        <Suspense
+          fallback={
+            <div className="flex justify-center items-center text-white h-screen text-4xl">
+              <ImSpinner9 size={30} className="animate-spin" />
+            </div>
+          }
+        >
+          <Appearance />
+        </Suspense>
+      ),
     },
 
     {
       path: "setting",
-      element: <Suspense   fallback={
-        <div className="flex justify-center items-center text-white h-screen text-4xl">
-          <img src="/assets/screenloader.svg" alt="loading"/>
-        </div>
-      } ><Setting /></Suspense> 
+      element: (
+        <Suspense
+          fallback={
+            <div className="flex justify-center items-center text-white h-screen text-4xl">
+              <ImSpinner9 size={30} className="animate-spin" />
+            </div>
+          }
+        >
+          <Setting />
+        </Suspense>
+      ),
     },
     {
       path: "pro",
-      element: <Suspense  fallback={
-        <div className="flex justify-center items-center text-white h-screen text-4xl">
-          <img src="/assets/screenloader.svg" alt="loading"/>
-        </div>
-      } ><Pro /></Suspense> 
+      element: (
+        <Suspense
+          fallback={
+            <div className="flex justify-center items-center text-white h-screen text-4xl">
+              <ImSpinner9 size={30} className="animate-spin" />
+            </div>
+          }
+        >
+          <Pro />
+        </Suspense>
+      ),
     },
 
     {
@@ -61,28 +86,30 @@ export default function Index() {
   let element = useRoutes(routes);
 
   return loading ? (
-    <div  style={{ background: "#fafbfc" }} className="flex justify-center items-center text-white h-screen text-4xl">
-      <img src="/assets/screenloader.svg" alt="loading"/>
-  </div>
+    <div
+      style={{ background: "#fafbfc" }}
+      className="flex justify-center items-center text-white h-screen text-4xl"
+    >
+      <ImSpinner9 size={30} className="animate-spin" />
+    </div>
   ) : isAuth ? (
- 
-      <div
-        style={{ background: "#fafbfc" }}
-        className="w-full grid overflow-hidden   min-h-screen  relative"
-      >
-        <div className="flex flex-col lg:flex-row">
-          <Sidebar />
-          <div className="w-full lg:w-3/5">
-            <div className="lg:hidden">
-              <PanelNav />
-            </div>
-            <Navbar />
-
-            {element}
+    <div
+      style={{ background: "#fafbfc" }}
+      className="w-full grid overflow-hidden   min-h-screen  relative"
+    >
+      <div className="flex flex-col lg:flex-row">
+        <Sidebar />
+        <div className="w-full lg:w-3/5">
+          <div className="lg:hidden">
+            <PanelNav />
           </div>
-          <QwikkerPanel />
+          <Navbar />
+
+          {element}
         </div>
+        <QwikkerPanel />
       </div>
+    </div>
   ) : (
     <Navigate to="/login" replace />
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import Login from "../auth/Login";
+import { ImSpinner9 } from "react-icons/im";
 import NotFound from "../dashboard/NotFound";
 import Register from "../auth/Register";
 import { useRoutes } from "react-router-dom";
@@ -13,7 +14,7 @@ export default function Index() {
     },
     {
       path: ":name",
-      element: <UsersHome/>,
+      element: <UsersHome />,
     },
     {
       path: "register",
@@ -31,7 +32,7 @@ export default function Index() {
       <React.Suspense
         fallback={
           <div className="flex justify-center items-center text-white h-screen text-4xl">
-            loading...
+            <ImSpinner9 size={30} className="animate-spin" />
           </div>
         }
       >
