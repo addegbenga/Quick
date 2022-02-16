@@ -57,7 +57,10 @@ export default function MyModal({ isOpen, setIsOpen, itemId }) {
               <div className="inline-block w-full max-w-md p-6 my-8 pb-20 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                 <div className="flex justify-between items-center border-b pb-5 mb-8 mt-3">
                   <h3 className="text-xl font-semibold">Add Thumbnail</h3>
-                  <button onClick={() => setIsOpen(false)}>
+                  <button
+                    className="outline-none border-0"
+                    onClick={() => setIsOpen(false)}
+                  >
                     {" "}
                     <FaTimes />
                   </button>
