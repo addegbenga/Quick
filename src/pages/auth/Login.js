@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 // import { FcGoogle } from "react-icons/fc";
 import { loginUser } from "../../actions/authActions";
@@ -32,7 +32,7 @@ export default function Login() {
   return (
     <>
       <div className="flex  justify-center pt-6 lg:py-20  items-center  ">
-        <div className="inline-block w-full pt-15 max-w-2xl p-6 md:px-10 py-16 my-8 overflow-hidden text-left align-middle transition-all lg:border transform bg-white lg:card-shadow rounded-2xl">
+        <div className="inline-block w-full pt-15 max-w-2xl p-6 md:px-14 py-16 my-8 overflow-hidden text-left align-middle transition-all lg:border transform bg-white lg:card-shadow rounded-2xl">
           <h3 className="text-2xl tracking-tighter border-b pb-8 mb-10 border-blue-500 border-opacity-10 lg:pb-0 lg:border-0 text-textPrimaryColor lg:text-4xl text-center mb-6 font-semibold font-medium leading-6 text-gray-900">
             Login to your Account
           </h3>
@@ -84,9 +84,8 @@ export default function Login() {
             </form>
           </div>
 
-          <p className="text-textPrimaryColor text-center text-xs px-10 ">
-            By clicking the Continue button, you agree to the terms of service
-            and privacy policy.
+          <p className="text-textPrimaryColor text-center text-md px-10 ">
+            Don't have an account? <Link to="/register">Create one</Link>
           </p>
         </div>
       </div>

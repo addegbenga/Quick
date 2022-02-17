@@ -7,8 +7,7 @@ import {
   LOAD_USER_ERROR,
   LOADING,
 } from "./types";
-import {  toast } from 'react-toastify';
-
+import { toast } from "react-toastify";
 
 import { api } from "../utils/api";
 
@@ -30,8 +29,6 @@ export const loadUser = () => async (dispatch) => {
     });
   }
 };
-
-
 
 // export const googleLogin = (body) => async (dispatch) => {
 //   try {
@@ -60,13 +57,12 @@ export const loginUser = (body) => async (dispatch) => {
     });
     dispatch(loadUser());
   } catch (error) {
-   console.log(error.response.data)
+    console.log(error.response.data);
     dispatch({
       type: LOGIN_ERROR,
       payload: error.response.data,
     });
-    toast.error(error.response.data)
-  
+    toast.error(error.response.data);
   }
 };
 
@@ -76,6 +72,7 @@ export const registerUser = (body) => async (dispatch) => {
       type: LOADING,
     });
     const response = await api.post(`/v1/auth/register`, body);
+    toast.success("Registered Successfully");
     dispatch({
       type: REGISTER_USER,
       payload: response.data,
@@ -85,7 +82,7 @@ export const registerUser = (body) => async (dispatch) => {
       type: REGISTER_ERROR,
       payload: error.response.data,
     });
-    toast.error(error.response.data)
+    toast.error(error.response.data);
   }
 };
 
