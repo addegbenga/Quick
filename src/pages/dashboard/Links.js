@@ -7,9 +7,11 @@ import {
   getAllLink,
   editLink,
   deleteProfile,
+  deleteLinkAvatar,
 } from "../../actions/profileAction";
 // import { BsFillPencilFill } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
+import { CgSpinner } from "react-icons/cg";
 import PreviewModal from "../../components/dashboard/PreviewModal";
 import { IoEyeSharp } from "react-icons/io5";
 import { VscTrash } from "react-icons/vsc";
@@ -133,6 +135,12 @@ export default function Links() {
     setMyForms((current) =>
       current.map((x) => (x._id === id ? { ...x, linkurl } : x))
     );
+  };
+
+  const handleDeleteLinkAvatar = async (item) => {
+    // setOpenUploadModal(false);
+    await dispatch(deleteLinkAvatar(item));
+    dispatch(getAllLink());
   };
 
   return (
@@ -306,11 +314,13 @@ export default function Links() {
                             </button>
                             <button
                               onClick={() => {
-                                setOpenUploadModal(false);
-                                setCurrentLinkId(item._id);
+                                handleDeleteLinkAvatar(item);
                               }}
-                              className="bg-gray-200 rounded-md p-2"
+                              className="bg-gray-200 flex justify-center items-center gap-2 rounded-md p-2"
                             >
+                              {loading && (
+                                <CgSpinner size={23} className="animate-spin" />
+                              )}{" "}
                               Remove
                             </button>
                           </div>

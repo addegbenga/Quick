@@ -36,7 +36,6 @@ export const editLink = (body) => async (dispatch) => {
       type: LOADING,
     });
     const response = await api.post(`/v1/profile/edit`, body);
-
     dispatch({
       type: EDIT_LINK,
       payload: response.data,
@@ -108,5 +107,25 @@ export const deleteProfile = (body) => async (dispatch) => {
       type: "DELETE_PROFILE_ERROR",
     });
     toast.error(error.message.data);
+  }
+};
+
+export const deleteLinkAvatar = (body) => async (dispatch) => {
+  try {
+    dispatch({
+      type: LOADING,
+    });
+    const resp = await api.post("/v1/profile/deleteLinkAvatar", {
+      linkAvatarId: body.linkAvatarId,
+      linkId: body._id,
+    });
+    toast.success(resp.data);
+    dispatch({
+      type: "DELETE_LINK_IMG",
+    });
+  } catch (error) {
+    dispatch({
+      type: "DELETE_LINK_IMG_ERROR",
+    });
   }
 };

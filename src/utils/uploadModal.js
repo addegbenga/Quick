@@ -4,6 +4,7 @@ import { FaTimes } from "react-icons/fa";
 import { CgSpinner } from "react-icons/cg";
 import { useDispatch, useSelector } from "react-redux";
 import { editLink, getAllLink } from "../actions/profileAction";
+import { toast } from "react-toastify";
 
 export default function MyModal({ isOpen, setIsOpen, itemId }) {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ export default function MyModal({ isOpen, setIsOpen, itemId }) {
     myform.append("file", e.target.files[0]);
     myform.append("id", itemId);
     await dispatch(editLink(myform));
+    toast.success("Uploaded succesfully");
     dispatch(getAllLink());
     setIsOpen(false);
   };
