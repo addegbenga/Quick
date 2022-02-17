@@ -33,11 +33,11 @@ export default function Login() {
     <>
       <div className="flex  justify-center pt-6 lg:py-20  items-center  ">
         <div className="inline-block w-full pt-15 max-w-2xl p-6 md:px-14 py-16 my-8 overflow-hidden text-left align-middle transition-all lg:border transform bg-white lg:card-shadow rounded-2xl">
-          <h3 className="text-2xl tracking-tighter border-b pb-8 mb-10 border-blue-500 border-opacity-10 lg:pb-0 lg:border-0 text-textPrimaryColor lg:text-4xl text-center mb-6 font-semibold font-medium leading-6 text-gray-900">
+          <h3 className="text-2xl tracking-tighter border-b pb-8 my-10 border-blue-500 border-opacity-10 lg:pb-0 lg:border-0 text-textPrimaryColor lg:text-4xl text-center  leading-6 text-gray-900">
             Login to your Account
           </h3>
           <div>
-            <form onSubmit={handleSubmit} className="grid grid-cols gap-3  ">
+            <form onSubmit={handleSubmit} className="grid grid-cols gap-5  ">
               <input
                 type="text"
                 required
@@ -45,7 +45,7 @@ export default function Login() {
                 name="email"
                 value={form.email}
                 onChange={(e) => handleChange(e)}
-                className="w-full outline-none text-sm py-5 lg:py-4  p-3 rounded-lg"
+                className="w-full outline-none text-sm focus-none py-5 lg:py-4  p-3 rounded-lg"
                 placeholder="Enter your email"
                 style={{ background: "#eff0f5" }}
               />
@@ -57,7 +57,7 @@ export default function Login() {
                 name="password"
                 value={form.password}
                 onChange={(e) => handleChange(e)}
-                className="w-full text-sm py-5 lg:py-4  outline-none  p-3 rounded-lg "
+                className="w-full text-sm py-5 lg:py-4 focus-none  outline-none  p-3 rounded-lg "
                 placeholder="Enter your password"
                 style={{ background: "#eff0f5" }}
               />
