@@ -80,10 +80,7 @@ export default function Home() {
           src="/assets/qwikkerasset17.png"
           alt="asset"
         />
-        <h1
-          style={{ letterSpacing: "-0.2rem" }}
-          className=" text-customHeaderFontMobile md:text-5xl lg:text-7xl 2xl:text-8xl 2xl:w-3/4 2xl:leading-12 lg:px-20 xl:px-64 md:px-10 leading-10  relative z-20 text-textPrimaryColor font-black text-center"
-        >
+        <h1 className="  md:text-5xl px-5 text-4xl lg:text-6xl 2xl:w-3/4   lg:px-20 xl:px-64 md:px-10   relative z-20 text-textPrimaryColor font-black text-center">
           Modern platform to have your social links.
         </h1>
 
