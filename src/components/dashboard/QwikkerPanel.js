@@ -25,7 +25,7 @@ export default function QwikkerPanel() {
       >
         <div className="flex items-center flex-col text-sm mt-8">
           <div className="h-16 w-16 rounded-full ">
-            <img src={user.avatarUrl} alt="avatar" />
+            <img className="rounded-full" src={user.avatarUrl} alt="avatar" />
           </div>
           <h1 className="mt-1 text-white font-bold text-opacity-90">
             {user.username}

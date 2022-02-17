@@ -57,7 +57,11 @@ export default function PreviewModal(props) {
                   >
                     <div className="flex items-center flex-col text-sm mt-12">
                       <div className="h-24 w-24 rounded-full ">
-                        <img src={user.avatarUrl} alt="avatar" />
+                        <img
+                          className="rounded-full"
+                          src={user.avatarUrl}
+                          alt="avatar"
+                        />
                       </div>
                       <h1 className="mt-3 font-bold text-white text-lg text-opacity-90">
                         {user.username}
