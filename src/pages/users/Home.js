@@ -38,7 +38,7 @@ export default function Home() {
           <h1 className="mt-3 text-lg lg:text-lg font-bold text-white text-opacity-90">
             {users && users.username}
           </h1>
-          <p className="text-white text-base  lg:text-base text-opacity-90">
+          <p className="text-white text-base py-3  lg:text-base text-opacity-90">
             {users && users.bio}
           </p>
         </div>
