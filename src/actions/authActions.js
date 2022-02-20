@@ -6,6 +6,8 @@ import {
   LOAD_USER,
   LOAD_USER_ERROR,
   LOADING,
+  EDIT_USER_DETAILS,
+  EDIT_USER_DETAILS_ERROR,
 } from "./types";
 import { toast } from "react-toastify";
 
@@ -86,20 +88,21 @@ export const registerUser = (body) => async (dispatch) => {
   }
 };
 
-// export const editUser = (body) => async (dispatch) => {
-//   try {
-//     dispatch({
-//       type: LOADING,
-//     });
-//     const response = await api.post(`/api/v1/auth/edit`, body);
-//     dispatch({
-//       type: EDIT_USER_DETAILS,
-//       payload: response.data.data,
-//     });
-//   } catch (error) {
-//     dispatch({
-//       type: EDIT_USER_DETAILS_ERROR,
-//       payload: error.response.data,
-//     });
-//   }
-// };
+export const editUser = (body) => async (dispatch) => {
+  try {
+    dispatch({
+      type: LOADING,
+    });
+    console.log(body);
+    const response = await api.post(`/v1/auth/edit`, body);
+    dispatch({
+      type: EDIT_USER_DETAILS,
+      payload: response.data.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: EDIT_USER_DETAILS_ERROR,
+      payload: error.response.data,
+    });
+  }
+};

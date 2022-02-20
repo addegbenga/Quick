@@ -7,6 +7,8 @@ import {
   REGISTER_USER,
   LOADING,
   LOGOUT_USER,
+  EDIT_USER_DETAILS,
+  EDIT_USER_DETAILS_ERROR,
   // FORGOT_PASSWORD,
   // RESET_PASSWORD,
   // GET_AUTH_USER,
@@ -30,6 +32,14 @@ export const authReducer = (state = initialState, action) => {
         loading: false,
         apiloading: false,
       };
+    case EDIT_USER_DETAILS:
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: action.payload,
+        loading: false,
+        apiloading: false,
+      };
     case REGISTER_USER:
       return {
         ...state,
@@ -46,7 +56,6 @@ export const authReducer = (state = initialState, action) => {
         loading: false,
         apiloading: false,
       };
-
     case LOADING:
       return {
         ...state,
@@ -59,7 +68,6 @@ export const authReducer = (state = initialState, action) => {
         loading: false,
         apiloading: false,
       };
-
     case LOGIN_ERROR:
       return {
         error: action.payload,
@@ -73,6 +81,12 @@ export const authReducer = (state = initialState, action) => {
         loading: false,
       };
     case LOAD_USER_ERROR:
+      return {
+        error: action.payload,
+        apiloading: false,
+        loading: false,
+      };
+    case EDIT_USER_DETAILS_ERROR:
       return {
         error: action.payload,
         apiloading: false,

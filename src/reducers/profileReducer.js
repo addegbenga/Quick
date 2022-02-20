@@ -3,7 +3,6 @@ import {
   GET_LINK,
   GET_LINK_BY_USER_ID,
   GET_LINK_ERROR,
-  LOADING,
   EDIT_LINK,
 } from "../actions/types";
 
@@ -55,10 +54,16 @@ export const profileReducer = (state = initialState, action) => {
 
         apiloading: false,
       };
-    case LOADING:
+    case "LOADING_PROFILE":
       return {
         ...state,
         apiloading: true,
+      };
+    case "DELETE_LINK_IMG":
+      return {
+        ...state,
+        loading: false,
+        apiloading: false,
       };
     case GET_LINK_ERROR:
       return {

@@ -24,13 +24,19 @@ export default function QwikkerPanel() {
         className="bg-indigo-700 w-56 border-8 border-black m-auto mt-20 scrollbar overflow-y-auto "
       >
         <div className="flex items-center flex-col text-sm mt-8">
-          <div className="h-16 w-16 rounded-full ">
-            <img className="rounded-full" src={user.avatarUrl} alt="avatar" />
+          <div className="h-16 w-16 border border-opacity-20 rounded-full ">
+            <img
+              className="rounded-full w-full"
+              src={user.avatarUrl}
+              alt="avatar"
+            />
           </div>
           <h1 className="mt-1 text-white font-bold text-opacity-90">
             {user.username}
           </h1>
-          <p className="text-white text-opacity-90">{user.bio}</p>
+          <p className="text-white text-center text-xs px-2 py-2 text-opacity-80">
+            {user.bio}
+          </p>
         </div>
 
         <div className=" w-11/12 m-auto mt-4">

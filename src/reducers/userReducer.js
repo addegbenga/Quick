@@ -1,4 +1,4 @@
-import {  GET_USER, GET_USER_ERROR, LOADING } from "../actions/types";
+import { GET_USER, GET_USER_ERROR, LOADING } from "../actions/types";
 
 const initialState = {
   user: null,
@@ -20,7 +20,7 @@ export const userReducer = (state = initialState, action) => {
     case LOADING:
       return {
         ...state,
-        apiloading: true,
+        apiloading: false,
       };
 
     case GET_USER_ERROR:

@@ -1,5 +1,4 @@
 import {
-  LOADING,
   ADD_LINK,
   ADD_LINK_ERROR,
   EDIT_LINK_ERROR,
@@ -15,7 +14,7 @@ import { toast } from "react-toastify";
 export const addLink = (body) => async (dispatch) => {
   try {
     dispatch({
-      type: LOADING,
+      type: "LOADING_PROFILE",
     });
     const response = await api.post(`/v1/profile/create`);
     dispatch({
@@ -33,7 +32,7 @@ export const addLink = (body) => async (dispatch) => {
 export const editLink = (body) => async (dispatch) => {
   try {
     dispatch({
-      type: LOADING,
+      type: "LOADING_PROFILE",
     });
     const response = await api.post(`/v1/profile/edit`, body);
     dispatch({
@@ -58,7 +57,7 @@ export const editLink = (body) => async (dispatch) => {
 export const getAllLink = () => async (dispatch) => {
   try {
     dispatch({
-      type: LOADING,
+      type: "LOADING_PROFILE",
     });
     const response = await api.get(`/v1/profile/get_profile`);
     dispatch({
@@ -76,7 +75,7 @@ export const getAllLink = () => async (dispatch) => {
 export const getAllLink_By_UserId = (id) => async (dispatch) => {
   try {
     dispatch({
-      type: LOADING,
+      type: "LOADING_PROFILE",
     });
     const response = await api.post(`/v1/profile/get_profile_by_userId`, id);
     dispatch({
@@ -93,7 +92,7 @@ export const getAllLink_By_UserId = (id) => async (dispatch) => {
 export const deleteProfile = (body) => async (dispatch) => {
   try {
     dispatch({
-      type: LOADING,
+      type: "LOADING_PROFILE",
     });
     const response = await api.delete(`/v1/profile/delete`, {
       data: { id: body.id },
@@ -113,7 +112,7 @@ export const deleteProfile = (body) => async (dispatch) => {
 export const deleteLinkAvatar = (body) => async (dispatch) => {
   try {
     dispatch({
-      type: LOADING,
+      type: "LOADING_PROFILE",
     });
     const resp = await api.post("/v1/profile/deleteLinkAvatar", {
       linkAvatarId: body.linkAvatarId,
