@@ -41,7 +41,7 @@ export default function Appearance() {
               <div className="text-lg lg:flex-row w-full flex flex-col gap-3">
                 <button
                   onClick={() => setIsOpen(true)}
-                  className="p-2.5 text-sm w-full rounded-md bg-indigo-500 text-white"
+                  className="p-2.5 text-sm w-full rounded-md bg-indigo-600 text-white"
                 >
                   Pick an Image
                 </button>

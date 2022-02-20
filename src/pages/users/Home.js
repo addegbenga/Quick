@@ -30,7 +30,7 @@ export default function Home() {
         <div className="flex items-center flex-col text-sm pt-10 ">
           <div className="h-24 w-24 lg:h-24 lg:w-24 rounded-full  bg-opacity-70">
             <img
-              className="rounded-full"
+              className="rounded-full w-full"
               src={users && users.avatarUrl}
               alt="avatar"
             />
