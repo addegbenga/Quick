@@ -30,9 +30,9 @@ export default function Appearance() {
           <h1 className="font-medium text-lg">Profile</h1>
           <div className="bg-white shadow-lg rounded  mt-4 p-4 pt-8 ">
             <div className="flex items-center  gap-3 w-full">
-              <div className="w-28 h-28 flex border rounded-md items-center">
+              <div className="w-20 h-20 flex border rounded-md items-center">
                 <img
-                  className="rounded-full w-full h-full "
+                  className="rounded-full  w-20 h-20 w-full h-full "
                   src={user.avatarUrl}
                   alt="avr"
                 />
@@ -51,7 +51,7 @@ export default function Appearance() {
               </div>
             </div>
 
-            <div className="lg:my-6">
+            <div className="lg:my-6 my-4">
               <h1 className="border-b text-black text-opacity-70  pb-2">
                 Profile Title
               </h1>
