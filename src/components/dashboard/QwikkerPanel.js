@@ -26,7 +26,7 @@ export default function QwikkerPanel() {
         <div className="flex items-center flex-col text-sm mt-8">
           <div className="h-16 w-16 border border-opacity-20 rounded-full ">
             <img
-              className="rounded-full w-full"
+              className="rounded-full w-full h-full"
               src={user.avatarUrl}
               alt="avatar"
             />
