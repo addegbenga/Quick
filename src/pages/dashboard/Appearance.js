@@ -32,7 +32,7 @@ export default function Appearance() {
             <div className="flex items-center  gap-3 w-full">
               <div className="w-28 h-28 flex border rounded-md items-center">
                 <img
-                  className="rounded-full w-full "
+                  className="rounded-full w-full h-full "
                   src={user.avatarUrl}
                   alt="avr"
                 />
